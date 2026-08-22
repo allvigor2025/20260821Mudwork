@@ -36,10 +36,10 @@ const FOOTER_SERVICES = ["牆面施工", "浴室裝修", "磁磚鋪設", "自地
 
 export default function BathroomPage() {
   return (
-    <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#252525" }}>
+    <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#14151f" }}>
 
       {/* TOP BAR */}
-      <div style={{ background: "#252525", color: "#fff", fontSize: "13px", padding: "8px 0" }}>
+      <div style={{ background: "#14151f", color: "#fff", fontSize: "13px", padding: "8px 0" }}>
         <div style={container}><span>📞 免費諮詢專線：0975-091-591 &nbsp;｜&nbsp; 📍 服務區域：台北・台中</span></div>
       </div>
 
@@ -47,18 +47,18 @@ export default function BathroomPage() {
       <header style={{ position: "sticky", top: 0, zIndex: 100, background: "#fff", borderBottom: "1px solid #e1e1e1", boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
         <div style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 20px", height: "72px" }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-            <div style={{ width: 38, height: 38, background: "#ffb600", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 900, color: "#252525" }}>黃</div>
+            <div style={{ width: 38, height: 38, background: "#e65644", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 900, color: "#fff" }}>黃</div>
             <div>
-              <div style={{ fontWeight: 800, fontSize: "16px", color: "#252525", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
+              <div style={{ fontWeight: 800, fontSize: "16px", color: "#14151f", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
               <div style={{ fontSize: "10px", color: "#888", letterSpacing: "1px" }}>MUD-WORK</div>
             </div>
           </a>
           <nav style={{ display: "flex", gap: "24px" }}>
             {NAV_LINKS.map((link) => (
               <a key={link.label} href={link.href} style={{
-                color: link.label === "浴室裝修專案" ? "#ffb600" : "#252525",
+                color: link.label === "浴室裝修專案" ? "#e65644" : "#14151f",
                 textDecoration: "none", fontWeight: link.label === "浴室裝修專案" ? 700 : 500, fontSize: "14px",
-                borderBottom: link.label === "浴室裝修專案" ? "2px solid #ffb600" : "2px solid transparent", paddingBottom: "2px",
+                borderBottom: link.label === "浴室裝修專案" ? "2px solid #e65644" : "2px solid transparent", paddingBottom: "2px",
               }}>{link.label}</a>
             ))}
           </nav>
@@ -67,13 +67,13 @@ export default function BathroomPage() {
       </header>
 
       {/* HERO */}
-      <section style={{ background: "linear-gradient(135deg, #252525, #1a1a1a)", padding: "72px 20px", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", right: 0, top: 0, width: 360, height: 360, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,182,0,0.14) 0%, transparent 70%)", transform: "translate(30%,-30%)", pointerEvents: "none" }} />
+      <section style={{ background: "linear-gradient(135deg, #14151f, #0e0f17)", padding: "72px 20px", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", right: 0, top: 0, width: 360, height: 360, borderRadius: "50%", background: "radial-gradient(circle, rgba(230,86,68,0.14) 0%, transparent 70%)", transform: "translate(30%,-30%)", pointerEvents: "none" }} />
         <div style={container}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 20 }}>
             <a href="/" style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", textDecoration: "none" }}>首頁</a>
             <span style={{ color: "rgba(255,255,255,0.3)" }}>›</span>
-            <span style={{ color: "#ffb600", fontSize: "13px", fontWeight: 600 }}>浴室裝修專案</span>
+            <span style={{ color: "#e65644", fontSize: "13px", fontWeight: 600 }}>浴室裝修專案</span>
           </div>
           <h1 style={{ fontSize: "clamp(2rem,4vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1.1, marginBottom: 16 }}>浴室裝修專案</h1>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", maxWidth: 540, lineHeight: 1.85 }}>
@@ -93,12 +93,12 @@ export default function BathroomPage() {
             {SERVICE_TYPES.map((s) => (
               <div key={s.title} style={{ background: "#f5f5f3", borderRadius: 10, padding: "36px 32px" }}>
                 <div style={{ fontSize: "2.2rem", marginBottom: 16 }}>{s.icon}</div>
-                <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#252525", marginBottom: 16 }}>{s.title}</h3>
+                <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#14151f", marginBottom: 16 }}>{s.title}</h3>
                 <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
                   {s.items.map((item, i) => (
                     <li key={item} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: "14px", color: "#555" }}>
                       <span style={{
-                        width: 22, height: 22, borderRadius: "50%", background: "#ffb600", color: "#252525",
+                        width: 22, height: 22, borderRadius: "50%", background: "#e65644", color: "#fff",
                         display: "flex", alignItems: "center", justifyContent: "center",
                         fontSize: "11px", fontWeight: 800, flexShrink: 0,
                       }}>{i + 1}</span>
@@ -113,26 +113,26 @@ export default function BathroomPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: "linear-gradient(135deg, #ffb600, #e09600)", padding: "72px 20px", textAlign: "center" }}>
+      <section style={{ background: "linear-gradient(135deg, #e65644, #c94734)", padding: "72px 20px", textAlign: "center" }}>
         <div style={container}>
-          <h2 style={{ fontSize: "clamp(1.6rem,3vw,2.2rem)", fontWeight: 800, color: "#252525", marginBottom: 16 }}>
+          <h2 style={{ fontSize: "clamp(1.6rem,3vw,2.2rem)", fontWeight: 800, color: "#fff", marginBottom: 16 }}>
             浴室裝修需求？免費預約估價
           </h2>
-          <p style={{ fontSize: "15px", color: "rgba(37,37,37,0.75)", marginBottom: 32, maxWidth: 480, margin: "0 auto 32px" }}>
+          <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.85)", marginBottom: 32, maxWidth: 480, margin: "0 auto 32px" }}>
             提供免費預約估價和線上表單預約服務，師傅親自到場評估。
           </p>
-          <a href="/#contact" style={{ background: "#252525", color: "#fff", padding: "14px 36px", borderRadius: 6, fontWeight: 700, fontSize: "15px", textDecoration: "none", display: "inline-block" }}>
+          <a href="/#contact" style={{ background: "#14151f", color: "#fff", padding: "14px 36px", borderRadius: 6, fontWeight: 700, fontSize: "15px", textDecoration: "none", display: "inline-block" }}>
             立即免費諮詢
           </a>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer style={{ background: "#252525", color: "#fff", padding: "60px 20px 0" }}>
+      <footer style={{ background: "#14151f", color: "#fff", padding: "60px 20px 0" }}>
         <div style={{ ...container, display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 40 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-              <div style={{ width: 38, height: 38, background: "#ffb600", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 900, color: "#252525" }}>黃</div>
+              <div style={{ width: 38, height: 38, background: "#e65644", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 900, color: "#fff" }}>黃</div>
               <div>
                 <div style={{ fontWeight: 800, fontSize: "16px" }}>泥作師傅黃師傅</div>
                 <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.45)", letterSpacing: "1px" }}>MUD-WORK</div>
@@ -141,13 +141,13 @@ export default function BathroomPage() {
             <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", lineHeight: 1.9, marginBottom: 20 }}>40 年傳承淬鍊的泥作工法，專業承接各式泥作工程。誠信服務、品質保證。</p>
           </div>
           <div>
-            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#ffb600" }}>服務項目</h4>
+            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#e65644" }}>服務項目</h4>
             <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
               {FOOTER_SERVICES.map((s) => (<li key={s}><a href="/services" style={{ color: "rgba(255,255,255,0.65)", fontSize: "13.5px", textDecoration: "none" }}>{s}</a></li>))}
             </ul>
           </div>
           <div>
-            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#ffb600" }}>聯絡資訊</h4>
+            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#e65644" }}>聯絡資訊</h4>
             <p style={{ fontSize: "13.5px", color: "rgba(255,255,255,0.65)", lineHeight: 2 }}>
               📞 0975-091-591<br />💬 LINE：@mtj8192y<br />📍 台北・台中
             </p>
@@ -162,6 +162,6 @@ export default function BathroomPage() {
 }
 
 const container: React.CSSProperties = { maxWidth: 1160, margin: "0 auto", padding: "0 20px" };
-const btnPrimary: React.CSSProperties = { background: "#ffb600", color: "#252525", padding: "12px 28px", borderRadius: 6, fontWeight: 700, fontSize: "14px", textDecoration: "none", display: "inline-block" };
-const sectionLabel: React.CSSProperties = { color: "#ffb600", fontWeight: 700, letterSpacing: "1.5px", fontSize: "12px", textTransform: "uppercase" as const, marginBottom: 12 };
-const h2: React.CSSProperties = { fontSize: "clamp(1.6rem,3vw,2.2rem)", fontWeight: 800, color: "#252525", lineHeight: 1.2, letterSpacing: "-0.5px", marginBottom: 16 };
+const btnPrimary: React.CSSProperties = { background: "#e65644", color: "#fff", padding: "12px 28px", borderRadius: 6, fontWeight: 700, fontSize: "14px", textDecoration: "none", display: "inline-block" };
+const sectionLabel: React.CSSProperties = { color: "#e65644", fontWeight: 700, letterSpacing: "1.5px", fontSize: "12px", textTransform: "uppercase" as const, marginBottom: 12 };
+const h2: React.CSSProperties = { fontSize: "clamp(1.6rem,3vw,2.2rem)", fontWeight: 800, color: "#14151f", lineHeight: 1.2, letterSpacing: "-0.5px", marginBottom: 16 };

@@ -84,8 +84,8 @@ function TagCarousel() {
         {allTags.map((tag, i) => (
           <div key={i} style={{
             flexShrink: 0, background: "#fff",
-            border: "1.5px solid #ffb600", borderRadius: 999,
-            padding: "8px 20px", fontSize: "13px", fontWeight: 600, color: "#252525",
+            border: "1.5px solid #e65644", borderRadius: 999,
+            padding: "8px 20px", fontSize: "13px", fontWeight: 600, color: "#14151f",
             whiteSpace: "nowrap",
           }}>
             {tag}
@@ -100,10 +100,10 @@ const FOOTER_SERVICES = ["牆面施工", "浴室裝修", "磁磚鋪設", "自地
 
 export default function ServicesPage() {
   return (
-    <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#252525" }}>
+    <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#14151f" }}>
 
       {/* TOP BAR */}
-      <div style={{ background: "#252525", color: "#fff", fontSize: "13px", padding: "8px 0" }}>
+      <div style={{ background: "#14151f", color: "#fff", fontSize: "13px", padding: "8px 0" }}>
         <div style={container}>
           <span>📞 免費諮詢專線：0975-091-591 &nbsp;｜&nbsp; 📍 服務區域：台北・台中</span>
         </div>
@@ -118,12 +118,12 @@ export default function ServicesPage() {
         <div style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 20px", height: "72px" }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
             <div style={{
-              width: 38, height: 38, background: "#ffb600", borderRadius: 4,
+              width: 38, height: 38, background: "#e65644", borderRadius: 4,
               display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 18, fontWeight: 900, color: "#252525",
+              fontSize: 18, fontWeight: 900, color: "#fff",
             }}>黃</div>
             <div>
-              <div style={{ fontWeight: 800, fontSize: "16px", color: "#252525", letterSpacing: "-0.3px", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
+              <div style={{ fontWeight: 800, fontSize: "16px", color: "#14151f", letterSpacing: "-0.3px", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
               <div style={{ fontSize: "10px", color: "#888", letterSpacing: "1px" }}>MUD-WORK</div>
             </div>
           </a>
@@ -131,11 +131,11 @@ export default function ServicesPage() {
           <nav style={{ display: "flex", gap: "24px" }}>
             {NAV_LINKS.map((link) => (
               <a key={link.label} href={link.href} style={{
-                color: link.label === "服務項目" ? "#ffb600" : "#252525",
+                color: link.label === "服務項目" ? "#e65644" : "#14151f",
                 textDecoration: "none",
                 fontWeight: link.label === "服務項目" ? 700 : 500,
                 fontSize: "14px",
-                borderBottom: link.label === "服務項目" ? "2px solid #ffb600" : "2px solid transparent",
+                borderBottom: link.label === "服務項目" ? "2px solid #e65644" : "2px solid transparent",
                 paddingBottom: "2px",
               }}>
                 {link.label}
@@ -149,20 +149,20 @@ export default function ServicesPage() {
 
       {/* HERO BANNER */}
       <section style={{
-        background: "linear-gradient(135deg, #252525 0%, #1a1a1a 60%, #111 100%)",
+        background: "linear-gradient(135deg, #14151f 0%, #0e0f17 60%, #111 100%)",
         padding: "72px 20px", position: "relative", overflow: "hidden",
       }}>
         <div style={{
           position: "absolute", right: 0, top: 0,
           width: 360, height: 360, borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(255,182,0,0.14) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(230,86,68,0.14) 0%, transparent 70%)",
           transform: "translate(30%, -30%)", pointerEvents: "none",
         }} />
         <div style={container}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 20 }}>
             <a href="/" style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", textDecoration: "none" }}>首頁</a>
             <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "13px" }}>›</span>
-            <span style={{ color: "#ffb600", fontSize: "13px", fontWeight: 600 }}>服務項目</span>
+            <span style={{ color: "#e65644", fontSize: "13px", fontWeight: 600 }}>服務項目</span>
           </div>
           <h1 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1.1, marginBottom: 16 }}>
             服務項目
@@ -198,7 +198,7 @@ export default function ServicesPage() {
                   el.style.transform = "translateY(0)";
                 }}
               >
-                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 4, background: "#ffb600" }} />
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 4, background: "#e65644" }} />
                 <div style={{
                   width: 60, height: 60, borderRadius: 12, background: "#fff",
                   display: "flex", alignItems: "center", justifyContent: "center",
@@ -206,13 +206,13 @@ export default function ServicesPage() {
                 }}>
                   {s.icon}
                 </div>
-                <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#252525", marginBottom: 12 }}>{s.title}</h3>
+                <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#14151f", marginBottom: 12 }}>{s.title}</h3>
                 <p style={{ fontSize: "14px", color: "#666", lineHeight: 1.8, marginBottom: 20 }}>{s.desc}</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                   {s.features.map((f) => (
                     <span key={f} style={{
-                      background: "#fff", border: "1px solid #ffb600",
-                      color: "#252525", fontSize: "11.5px", fontWeight: 600,
+                      background: "#fff", border: "1px solid #e65644",
+                      color: "#14151f", fontSize: "11.5px", fontWeight: 600,
                       padding: "3px 10px", borderRadius: 4,
                     }}>{f}</span>
                   ))}
@@ -224,10 +224,10 @@ export default function ServicesPage() {
       </section>
 
       {/* PROCESS */}
-      <section style={{ background: "#252525", padding: "80px 20px" }}>
+      <section style={{ background: "#14151f", padding: "80px 20px" }}>
         <div style={container}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <p style={{ ...sectionLabel, color: "#ffb600" }}>施工流程</p>
+            <p style={{ ...sectionLabel, color: "#e65644" }}>施工流程</p>
             <h2 style={{ ...h2, color: "#fff" }}>從諮詢到完工，4 個步驟搞定</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
@@ -240,12 +240,12 @@ export default function ServicesPage() {
                   <div style={{
                     position: "absolute", right: "-12px", top: "50%",
                     transform: "translateY(-50%)",
-                    color: "#ffb600", fontSize: "18px", zIndex: 1,
+                    color: "#e65644", fontSize: "18px", zIndex: 1,
                   }}>→</div>
                 )}
                 <div style={{
                   width: 52, height: 52, borderRadius: "50%",
-                  background: "#ffb600", color: "#252525",
+                  background: "#e65644", color: "#fff",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   fontSize: "16px", fontWeight: 800, margin: "0 auto 20px",
                 }}>{p.step}</div>
@@ -272,18 +272,18 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section style={{
-        background: "linear-gradient(135deg, #ffb600, #e09600)",
+        background: "linear-gradient(135deg, #e65644, #c94734)",
         padding: "72px 20px", textAlign: "center",
       }}>
         <div style={container}>
-          <h2 style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 800, color: "#252525", marginBottom: 16 }}>
+          <h2 style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 800, color: "#fff", marginBottom: 16 }}>
             有施工需求？讓我們來評估
           </h2>
-          <p style={{ fontSize: "15px", color: "rgba(37,37,37,0.75)", marginBottom: 32, maxWidth: 480, margin: "0 auto 32px" }}>
+          <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.85)", marginBottom: 32, maxWidth: 480, margin: "0 auto 32px" }}>
             師傅免費到場丈量估價，施工前提供詳細報價，沒有隱藏費用。
           </p>
           <a href="/#contact" style={{
-            background: "#252525", color: "#fff",
+            background: "#14151f", color: "#fff",
             padding: "14px 36px", borderRadius: 6,
             fontWeight: 700, fontSize: "15px", textDecoration: "none",
             display: "inline-block", letterSpacing: "0.5px",
@@ -294,14 +294,14 @@ export default function ServicesPage() {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ background: "#252525", color: "#fff", padding: "60px 20px 0" }}>
+      <footer style={{ background: "#14151f", color: "#fff", padding: "60px 20px 0" }}>
         <div style={{ ...container, display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 40 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
               <div style={{
-                width: 38, height: 38, background: "#ffb600", borderRadius: 4,
+                width: 38, height: 38, background: "#e65644", borderRadius: 4,
                 display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 18, fontWeight: 900, color: "#252525",
+                fontSize: 18, fontWeight: 900, color: "#fff",
               }}>黃</div>
               <div>
                 <div style={{ fontWeight: 800, fontSize: "16px" }}>泥作師傅黃師傅</div>
@@ -313,7 +313,7 @@ export default function ServicesPage() {
             </p>
           </div>
           <div>
-            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#ffb600" }}>服務項目</h4>
+            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#e65644" }}>服務項目</h4>
             <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
               {FOOTER_SERVICES.map((s) => (
                 <li key={s}>
@@ -323,7 +323,7 @@ export default function ServicesPage() {
             </ul>
           </div>
           <div>
-            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#ffb600" }}>聯絡資訊</h4>
+            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#e65644" }}>聯絡資訊</h4>
             <p style={{ fontSize: "13.5px", color: "rgba(255,255,255,0.65)", lineHeight: 2 }}>
               📞 0975-091-591<br />
               💬 LINE：@mtj8192y<br />
@@ -349,8 +349,8 @@ const container: React.CSSProperties = {
 };
 
 const btnPrimary: React.CSSProperties = {
-  background: "#ffb600",
-  color: "#252525",
+  background: "#e65644",
+  color: "#fff",
   padding: "12px 28px",
   borderRadius: 6,
   fontWeight: 700,
@@ -361,7 +361,7 @@ const btnPrimary: React.CSSProperties = {
 };
 
 const sectionLabel: React.CSSProperties = {
-  color: "#ffb600",
+  color: "#e65644",
   fontWeight: 700,
   letterSpacing: "1.5px",
   fontSize: "12px",
@@ -372,7 +372,7 @@ const sectionLabel: React.CSSProperties = {
 const h2: React.CSSProperties = {
   fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
   fontWeight: 800,
-  color: "#252525",
+  color: "#14151f",
   lineHeight: 1.2,
   letterSpacing: "-0.5px",
   marginBottom: 16,

@@ -86,10 +86,10 @@ export default function MudworkHome() {
   const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
 
   return (
-    <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#252525" }}>
+    <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#14151f" }}>
 
       {/* TOP BAR */}
-      <div style={{ background: "#252525", color: "#fff", fontSize: "13px", padding: "8px 0" }}>
+      <div style={{ background: "#14151f", color: "#fff", fontSize: "13px", padding: "8px 0" }}>
         <div style={container}>
           <span>📞 免費諮詢專線：0975-091-591 &nbsp;｜&nbsp; 📍 服務區域：台北・台中</span>
         </div>
@@ -104,12 +104,12 @@ export default function MudworkHome() {
         <div style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 20px", height: "72px" }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
             <div style={{
-              width: 38, height: 38, background: "#ffb600", borderRadius: 4,
+              width: 38, height: 38, background: "#e65644", borderRadius: 4,
               display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 18, fontWeight: 900, color: "#252525",
+              fontSize: 18, fontWeight: 900, color: "#fff",
             }}>黃</div>
             <div>
-              <div style={{ fontWeight: 800, fontSize: "16px", color: "#252525", letterSpacing: "-0.3px", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
+              <div style={{ fontWeight: 800, fontSize: "16px", color: "#14151f", letterSpacing: "-0.3px", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
               <div style={{ fontSize: "10px", color: "#888", letterSpacing: "1px" }}>MUD-WORK</div>
             </div>
           </a>
@@ -117,11 +117,11 @@ export default function MudworkHome() {
           <nav style={{ display: "flex", gap: "24px" }}>
             {NAV_LINKS.map((link) => (
               <a key={link.label} href={link.href} style={{
-                color: link.label === "首頁" ? "#ffb600" : "#252525",
+                color: link.label === "首頁" ? "#e65644" : "#14151f",
                 textDecoration: "none",
                 fontWeight: link.label === "首頁" ? 700 : 500,
                 fontSize: "14.5px",
-                borderBottom: link.label === "首頁" ? "2px solid #ffb600" : "2px solid transparent",
+                borderBottom: link.label === "首頁" ? "2px solid #e65644" : "2px solid transparent",
                 paddingBottom: "2px",
               }}>
                 {link.label}
@@ -135,28 +135,28 @@ export default function MudworkHome() {
 
       {/* HERO */}
       <section style={{
-        background: "linear-gradient(135deg, #252525 0%, #1a1a1a 60%, #111 100%)",
+        background: "linear-gradient(135deg, #14151f 0%, #0e0f17 60%, #111 100%)",
         color: "#fff", padding: "120px 20px", position: "relative", overflow: "hidden",
       }}>
         <div style={{
           position: "absolute", right: "-80px", top: "-80px",
           width: 420, height: 420, borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(255,182,0,0.18) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(230,86,68,0.18) 0%, transparent 70%)",
           pointerEvents: "none",
         }} />
         <div style={{
           position: "absolute", left: "55%", bottom: 0,
           width: 2, height: "60%",
-          background: "linear-gradient(to bottom, transparent, rgba(255,182,0,0.15), transparent)",
+          background: "linear-gradient(to bottom, transparent, rgba(230,86,68,0.15), transparent)",
           pointerEvents: "none",
         }} />
         <div style={{ ...container, maxWidth: 720 }}>
-          <p style={{ color: "#ffb600", fontWeight: 700, letterSpacing: "3px", fontSize: "12px", textTransform: "uppercase", marginBottom: 20 }}>
+          <p style={{ color: "#e65644", fontWeight: 700, letterSpacing: "3px", fontSize: "12px", textTransform: "uppercase", marginBottom: 20 }}>
             40 年傳承淬鍊的泥作工法
           </p>
           <h1 style={{ fontSize: "clamp(2.4rem,5vw,3.6rem)", fontWeight: 800, lineHeight: 1.1, marginBottom: 24, letterSpacing: "-1px" }}>
             牆面、磁磚、浴室裝修<br />
-            <span style={{ color: "#ffb600" }}>師傅親自把關</span>，堅固美觀
+            <span style={{ color: "#e65644" }}>師傅親自把關</span>，堅固美觀
           </h1>
           <p style={{ fontSize: "16px", lineHeight: 1.9, color: "rgba(255,255,255,0.72)", marginBottom: 40, maxWidth: 560 }}>
             泥作師傅黃師傅深耕泥作工程領域超過 40 年，承接牆面施工、浴室裝修、磁磚鋪設、
@@ -190,9 +190,9 @@ export default function MudworkHome() {
             {STATS.map((s) => (
               <div key={s.value} style={{
                 background: "#f5f5f3", borderRadius: 8, padding: "28px 24px",
-                borderLeft: "4px solid #ffb600",
+                borderLeft: "4px solid #e65644",
               }}>
-                <div style={{ fontSize: "1.7rem", fontWeight: 800, color: "#ffb600", lineHeight: 1 }}>{s.value}</div>
+                <div style={{ fontSize: "1.7rem", fontWeight: 800, color: "#e65644", lineHeight: 1 }}>{s.value}</div>
                 <div style={{ fontSize: "13.5px", color: "#555", marginTop: 8, lineHeight: 1.5 }}>{s.label}</div>
               </div>
             ))}
@@ -207,7 +207,7 @@ export default function MudworkHome() {
             <p style={sectionLabel}>我們的專業</p>
             <h2 style={h2}>服務項目</h2>
             <p style={{ ...bodyText, maxWidth: 500, margin: "0 auto 16px" }}>不論工程大小，皆可配合施作，歡迎電話詢問或到府估價。</p>
-            <a href="/services" style={{ color: "#ffb600", fontWeight: 600, fontSize: "14px" }}>查看完整服務說明 →</a>
+            <a href="/services" style={{ color: "#e65644", fontWeight: 600, fontSize: "14px" }}>查看完整服務說明 →</a>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28, marginBottom: 36 }}>
             {SERVICES.map((s) => (
@@ -217,11 +217,11 @@ export default function MudworkHome() {
                 borderBottom: "3px solid transparent",
                 transition: "border-color 0.2s",
               }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLDivElement).style.borderBottomColor = "#ffb600")}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLDivElement).style.borderBottomColor = "#e65644")}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLDivElement).style.borderBottomColor = "transparent")}
               >
                 <div style={{ fontSize: "2.4rem", marginBottom: 16 }}>{s.icon}</div>
-                <h3 style={{ fontSize: "17px", fontWeight: 700, marginBottom: 12, color: "#252525" }}>{s.title}</h3>
+                <h3 style={{ fontSize: "17px", fontWeight: 700, marginBottom: 12, color: "#14151f" }}>{s.title}</h3>
                 <p style={{ fontSize: "14px", color: "#777", lineHeight: 1.75 }}>{s.desc}</p>
               </div>
             ))}
@@ -231,12 +231,12 @@ export default function MudworkHome() {
 
       {/* WHY US */}
       <section style={{
-        background: "linear-gradient(135deg, #252525, #1a1a1a)",
+        background: "linear-gradient(135deg, #14151f, #0e0f17)",
         color: "#fff", padding: "88px 20px",
       }}>
         <div style={{ ...container, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
           <div>
-            <p style={{ ...sectionLabel, color: "#ffb600" }}>為什麼選擇我們</p>
+            <p style={{ ...sectionLabel, color: "#e65644" }}>為什麼選擇我們</p>
             <h2 style={{ ...h2, color: "#fff" }}>誠信施工，工法說話</h2>
             <p style={{ ...bodyText, color: "rgba(255,255,255,0.70)", marginBottom: 32 }}>
               我們深知一道牆的品質攸關居住安全與美觀，因此對每個細節都不妥協——
@@ -245,7 +245,7 @@ export default function MudworkHome() {
             <a href="#contact" style={{ ...btnPrimary, display: "inline-block" }}>立即詢價</a>
           </div>
           <div>
-            <p style={{ ...sectionLabel, color: "#ffb600" }}>我們的承諾</p>
+            <p style={{ ...sectionLabel, color: "#e65644" }}>我們的承諾</p>
             <p style={{ ...bodyText, color: "rgba(255,255,255,0.65)", marginBottom: 28 }}>
               打造安全、美觀且耐用的空間，是我們對每位業主不變的使命，
               也是成為泥作工程行業領先者的目標。
@@ -267,10 +267,10 @@ export default function MudworkHome() {
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" style={{ background: "#252525", padding: "88px 20px" }}>
+      <section id="projects" style={{ background: "#14151f", padding: "88px 20px" }}>
         <div style={container}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <p style={{ ...sectionLabel, color: "#ffb600" }}>實際案例</p>
+            <p style={{ ...sectionLabel, color: "#e65644" }}>實際案例</p>
             <h2 style={{ ...h2, color: "#fff" }}>近期完工工程</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
@@ -282,20 +282,20 @@ export default function MudworkHome() {
                 <div style={{
                   height: 200,
                   background: i % 2 === 0
-                    ? "linear-gradient(135deg, rgba(255,182,0,0.25), rgba(37,37,37,0.85))"
-                    : "linear-gradient(135deg, rgba(37,37,37,0.85), rgba(255,182,0,0.18))",
+                    ? "linear-gradient(135deg, rgba(230,86,68,0.25), rgba(37,37,37,0.85))"
+                    : "linear-gradient(135deg, rgba(37,37,37,0.85), rgba(230,86,68,0.18))",
                   display: "flex", alignItems: "flex-end",
                   padding: "16px 20px",
                 }}>
                   <span style={{
-                    background: "#ffb600", color: "#252525",
+                    background: "#e65644", color: "#fff",
                     fontSize: "11px", fontWeight: 700, padding: "4px 10px",
                     borderRadius: 4, letterSpacing: "0.5px",
                   }}>{p.tag}</span>
                 </div>
                 <div style={{ padding: "20px 24px" }}>
                   <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "16px", marginBottom: 6 }}>{p.title}</h3>
-                  <p style={{ color: "#ffb600", fontSize: "13px", fontWeight: 600 }}>📍 {p.location}</p>
+                  <p style={{ color: "#e65644", fontSize: "13px", fontWeight: 600 }}>📍 {p.location}</p>
                 </div>
               </div>
             ))}
@@ -317,7 +317,7 @@ export default function MudworkHome() {
             {TESTIMONIALS.map((t) => (
               <div key={t.name} style={{
                 background: "#f5f5f3", borderRadius: 10, padding: "32px 28px",
-                borderLeft: "4px solid #ffb600",
+                borderLeft: "4px solid #e65644",
               }}>
                 <p style={{ fontSize: "15px", color: "#444", lineHeight: 1.85, marginBottom: 20 }}>
                   &ldquo;{t.text}&rdquo;
@@ -325,14 +325,14 @@ export default function MudworkHome() {
                 <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
                   <div style={{
                     width: 44, height: 44, borderRadius: "50%",
-                    background: "linear-gradient(135deg, #ffb600, #e09600)",
+                    background: "linear-gradient(135deg, #e65644, #c94734)",
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    fontWeight: 800, color: "#252525", fontSize: "18px",
+                    fontWeight: 800, color: "#fff", fontSize: "18px",
                   }}>
                     {t.name[0]}
                   </div>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: "14px", color: "#252525" }}>{t.name}</div>
+                    <div style={{ fontWeight: 700, fontSize: "14px", color: "#14151f" }}>{t.name}</div>
                     <div style={{ fontSize: "12px", color: "#999" }}>{t.role}</div>
                   </div>
                 </div>
@@ -391,12 +391,12 @@ export default function MudworkHome() {
                     style={{
                       width: "100%", textAlign: "left", padding: "18px 20px",
                       background: "none", border: "none", cursor: "pointer",
-                      fontWeight: 600, fontSize: "14.5px", color: "#252525",
+                      fontWeight: 600, fontSize: "14.5px", color: "#14151f",
                       display: "flex", justifyContent: "space-between", alignItems: "center",
                     }}
                   >
                     {faq.q}
-                    <span style={{ color: "#ffb600", fontSize: "18px", flexShrink: 0, marginLeft: 12 }}>
+                    <span style={{ color: "#e65644", fontSize: "18px", flexShrink: 0, marginLeft: 12 }}>
                       {openFaq === i ? "−" : "+"}
                     </span>
                   </button>
@@ -409,7 +409,7 @@ export default function MudworkHome() {
               ))}
             </div>
 
-            <div style={{ marginTop: 32, background: "#252525", borderRadius: 10, padding: "24px 28px", color: "#fff" }}>
+            <div style={{ marginTop: 32, background: "#14151f", borderRadius: 10, padding: "24px 28px", color: "#fff" }}>
               <p style={{ fontWeight: 700, fontSize: "15px", marginBottom: 8 }}>直接聯絡師傅</p>
               <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "13.5px", lineHeight: 1.8 }}>
                 📞 0975-091-591<br />
@@ -422,14 +422,14 @@ export default function MudworkHome() {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ background: "#252525", color: "#fff", padding: "60px 20px 0" }}>
+      <footer style={{ background: "#14151f", color: "#fff", padding: "60px 20px 0" }}>
         <div style={{ ...container, display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 40 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
               <div style={{
-                width: 38, height: 38, background: "#ffb600", borderRadius: 4,
+                width: 38, height: 38, background: "#e65644", borderRadius: 4,
                 display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 18, fontWeight: 900, color: "#252525",
+                fontSize: 18, fontWeight: 900, color: "#fff",
               }}>黃</div>
               <div>
                 <div style={{ fontWeight: 800, fontSize: "16px" }}>泥作師傅黃師傅</div>
@@ -442,7 +442,7 @@ export default function MudworkHome() {
             </p>
           </div>
           <div>
-            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#ffb600" }}>服務項目</h4>
+            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#e65644" }}>服務項目</h4>
             <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
               {FOOTER_SERVICES.map((s) => (
                 <li key={s}>
@@ -452,7 +452,7 @@ export default function MudworkHome() {
             </ul>
           </div>
           <div>
-            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#ffb600" }}>快速連結</h4>
+            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#e65644" }}>快速連結</h4>
             <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
               {[
                 { label: "服務項目", href: "/services" },
@@ -466,7 +466,7 @@ export default function MudworkHome() {
             </ul>
           </div>
           <div>
-            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#ffb600" }}>聯絡資訊</h4>
+            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#e65644" }}>聯絡資訊</h4>
             <p style={{ fontSize: "13.5px", color: "rgba(255,255,255,0.65)", lineHeight: 2 }}>
               📞 0975-091-591<br />
               💬 LINE：@mtj8192y<br />
@@ -492,8 +492,8 @@ const container: React.CSSProperties = {
 };
 
 const btnPrimary: React.CSSProperties = {
-  background: "#ffb600",
-  color: "#252525",
+  background: "#e65644",
+  color: "#fff",
   padding: "12px 28px",
   borderRadius: 6,
   fontWeight: 700,
@@ -505,18 +505,18 @@ const btnPrimary: React.CSSProperties = {
 
 const btnOutline: React.CSSProperties = {
   background: "transparent",
-  color: "#252525",
+  color: "#14151f",
   padding: "11px 26px",
   borderRadius: 6,
   fontWeight: 700,
   fontSize: "14px",
   textDecoration: "none",
   display: "inline-block",
-  border: "2px solid #252525",
+  border: "2px solid #14151f",
 };
 
 const sectionLabel: React.CSSProperties = {
-  color: "#ffb600",
+  color: "#e65644",
   fontWeight: 700,
   letterSpacing: "1.5px",
   fontSize: "12px",
@@ -527,7 +527,7 @@ const sectionLabel: React.CSSProperties = {
 const h2: React.CSSProperties = {
   fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
   fontWeight: 800,
-  color: "#252525",
+  color: "#14151f",
   lineHeight: 1.2,
   letterSpacing: "-0.5px",
   marginBottom: 16,
@@ -544,7 +544,7 @@ const inputStyle: React.CSSProperties = {
   borderRadius: 6,
   border: "1px solid #ddd",
   fontSize: "14px",
-  color: "#252525",
+  color: "#14151f",
   background: "#fff",
   outline: "none",
   width: "100%",

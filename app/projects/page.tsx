@@ -69,10 +69,10 @@ export default function ProjectsPage() {
   const filtered = active === "全部" ? PROJECTS : PROJECTS.filter((p) => p.category === active);
 
   return (
-    <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#252525" }}>
+    <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#14151f" }}>
 
       {/* TOP BAR */}
-      <div style={{ background: "#252525", color: "#fff", fontSize: "13px", padding: "8px 0" }}>
+      <div style={{ background: "#14151f", color: "#fff", fontSize: "13px", padding: "8px 0" }}>
         <div style={container}>
           <span>📞 免費諮詢專線：0975-091-591 &nbsp;｜&nbsp; 📍 服務區域：台北・台中</span>
         </div>
@@ -82,18 +82,18 @@ export default function ProjectsPage() {
       <header style={{ position: "sticky", top: 0, zIndex: 100, background: "#fff", borderBottom: "1px solid #e1e1e1", boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
         <div style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 20px", height: "72px" }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-            <div style={{ width: 38, height: 38, background: "#ffb600", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 900, color: "#252525" }}>黃</div>
+            <div style={{ width: 38, height: 38, background: "#e65644", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 900, color: "#fff" }}>黃</div>
             <div>
-              <div style={{ fontWeight: 800, fontSize: "16px", color: "#252525", letterSpacing: "-0.3px", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
+              <div style={{ fontWeight: 800, fontSize: "16px", color: "#14151f", letterSpacing: "-0.3px", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
               <div style={{ fontSize: "10px", color: "#888", letterSpacing: "1px" }}>MUD-WORK</div>
             </div>
           </a>
           <nav style={{ display: "flex", gap: "24px" }}>
             {NAV_LINKS.map((link) => (
               <a key={link.label} href={link.href} style={{
-                color: link.label === "工程實績" ? "#ffb600" : "#252525",
+                color: link.label === "工程實績" ? "#e65644" : "#14151f",
                 textDecoration: "none", fontWeight: link.label === "工程實績" ? 700 : 500, fontSize: "14px",
-                borderBottom: link.label === "工程實績" ? "2px solid #ffb600" : "2px solid transparent", paddingBottom: "2px",
+                borderBottom: link.label === "工程實績" ? "2px solid #e65644" : "2px solid transparent", paddingBottom: "2px",
               }}>{link.label}</a>
             ))}
           </nav>
@@ -102,13 +102,13 @@ export default function ProjectsPage() {
       </header>
 
       {/* HERO */}
-      <section style={{ background: "linear-gradient(135deg, #252525, #1a1a1a)", padding: "72px 20px", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", right: 0, top: 0, width: 360, height: 360, borderRadius: "50%", background: "radial-gradient(circle, rgba(255,182,0,0.14) 0%, transparent 70%)", transform: "translate(30%,-30%)", pointerEvents: "none" }} />
+      <section style={{ background: "linear-gradient(135deg, #14151f, #0e0f17)", padding: "72px 20px", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", right: 0, top: 0, width: 360, height: 360, borderRadius: "50%", background: "radial-gradient(circle, rgba(230,86,68,0.14) 0%, transparent 70%)", transform: "translate(30%,-30%)", pointerEvents: "none" }} />
         <div style={container}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 20 }}>
             <a href="/" style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", textDecoration: "none" }}>首頁</a>
             <span style={{ color: "rgba(255,255,255,0.3)" }}>›</span>
-            <span style={{ color: "#ffb600", fontSize: "13px", fontWeight: 600 }}>工程實績</span>
+            <span style={{ color: "#e65644", fontSize: "13px", fontWeight: 600 }}>工程實績</span>
           </div>
           <h1 style={{ fontSize: "clamp(2rem,4vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1.1, marginBottom: 16 }}>工程實績</h1>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", maxWidth: 500, lineHeight: 1.8 }}>
@@ -130,9 +130,9 @@ export default function ProjectsPage() {
                 style={{
                   padding: "8px 20px", borderRadius: 999, fontSize: "13.5px", fontWeight: 600,
                   cursor: "pointer", border: "1.5px solid",
-                  borderColor: active === cat ? "#ffb600" : "#ddd",
-                  background: active === cat ? "#ffb600" : "#fff",
-                  color: active === cat ? "#252525" : "#555",
+                  borderColor: active === cat ? "#e65644" : "#ddd",
+                  background: active === cat ? "#e65644" : "#fff",
+                  color: active === cat ? "#fff" : "#555",
                   transition: "all 0.18s",
                 }}
               >{cat}</button>
@@ -152,13 +152,13 @@ export default function ProjectsPage() {
                 }}>
                   <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                     {p.tags.map((t) => (
-                      <span key={t} style={{ background: "#ffb600", color: "#252525", fontSize: "11px", fontWeight: 700, padding: "3px 9px", borderRadius: 4 }}>{t}</span>
+                      <span key={t} style={{ background: "#e65644", color: "#fff", fontSize: "11px", fontWeight: 700, padding: "3px 9px", borderRadius: 4 }}>{t}</span>
                     ))}
                   </div>
                 </div>
                 <div style={{ padding: "20px 22px" }}>
-                  <div style={{ fontSize: "11px", color: "#ffb600", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: 6 }}>{p.category}</div>
-                  <h3 style={{ fontWeight: 700, fontSize: "16px", color: "#252525", marginBottom: 8, lineHeight: 1.3 }}>{p.title}</h3>
+                  <div style={{ fontSize: "11px", color: "#e65644", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: 6 }}>{p.category}</div>
+                  <h3 style={{ fontWeight: 700, fontSize: "16px", color: "#14151f", marginBottom: 8, lineHeight: 1.3 }}>{p.title}</h3>
                   <p style={{ fontSize: "13.5px", color: "#666", lineHeight: 1.75, marginBottom: 14 }}>{p.desc}</p>
                   <div style={{ display: "flex", gap: 16, fontSize: "12.5px", color: "#888" }}>
                     <span>📍 {p.location}</span>
@@ -187,11 +187,11 @@ export default function ProjectsPage() {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ background: "#252525", color: "#fff", padding: "60px 20px 0" }}>
+      <footer style={{ background: "#14151f", color: "#fff", padding: "60px 20px 0" }}>
         <div style={{ ...container, display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 40 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-              <div style={{ width: 38, height: 38, background: "#ffb600", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 900, color: "#252525" }}>黃</div>
+              <div style={{ width: 38, height: 38, background: "#e65644", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 900, color: "#fff" }}>黃</div>
               <div>
                 <div style={{ fontWeight: 800, fontSize: "16px" }}>泥作師傅黃師傅</div>
                 <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.45)", letterSpacing: "1px" }}>MUD-WORK</div>
@@ -200,7 +200,7 @@ export default function ProjectsPage() {
             <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", lineHeight: 1.9, marginBottom: 20 }}>40 年傳承淬鍊的泥作工法，專業承接各式泥作工程。誠信服務、品質保證。</p>
           </div>
           <div>
-            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#ffb600" }}>服務項目</h4>
+            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#e65644" }}>服務項目</h4>
             <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
               {FOOTER_SERVICES.map((s) => (
                 <li key={s}><a href="/services" style={{ color: "rgba(255,255,255,0.65)", fontSize: "13.5px", textDecoration: "none" }}>{s}</a></li>
@@ -208,7 +208,7 @@ export default function ProjectsPage() {
             </ul>
           </div>
           <div>
-            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#ffb600" }}>聯絡資訊</h4>
+            <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#e65644" }}>聯絡資訊</h4>
             <p style={{ fontSize: "13.5px", color: "rgba(255,255,255,0.65)", lineHeight: 2 }}>
               📞 0975-091-591<br />💬 LINE：@mtj8192y<br />📍 台北・台中
             </p>
@@ -223,7 +223,7 @@ export default function ProjectsPage() {
 }
 
 const container: React.CSSProperties = { maxWidth: 1160, margin: "0 auto", padding: "0 20px" };
-const btnPrimary: React.CSSProperties = { background: "#ffb600", color: "#252525", padding: "12px 28px", borderRadius: 6, fontWeight: 700, fontSize: "14px", textDecoration: "none", display: "inline-block" };
-const sectionLabel: React.CSSProperties = { color: "#ffb600", fontWeight: 700, letterSpacing: "1.5px", fontSize: "12px", textTransform: "uppercase" as const, marginBottom: 12 };
-const h2: React.CSSProperties = { fontSize: "clamp(1.6rem,3vw,2.2rem)", fontWeight: 800, color: "#252525", lineHeight: 1.2, letterSpacing: "-0.5px", marginBottom: 16 };
+const btnPrimary: React.CSSProperties = { background: "#e65644", color: "#fff", padding: "12px 28px", borderRadius: 6, fontWeight: 700, fontSize: "14px", textDecoration: "none", display: "inline-block" };
+const sectionLabel: React.CSSProperties = { color: "#e65644", fontWeight: 700, letterSpacing: "1.5px", fontSize: "12px", textTransform: "uppercase" as const, marginBottom: 12 };
+const h2: React.CSSProperties = { fontSize: "clamp(1.6rem,3vw,2.2rem)", fontWeight: 800, color: "#14151f", lineHeight: 1.2, letterSpacing: "-0.5px", marginBottom: 16 };
 const bodyText: React.CSSProperties = { fontSize: "15px", color: "#666", lineHeight: 1.85 };

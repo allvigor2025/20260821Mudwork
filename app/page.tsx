@@ -88,20 +88,13 @@ export default function MudworkHome() {
   return (
     <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#14151f" }}>
 
-      {/* TOP BAR */}
-      <div style={{ background: "#14151f", color: "#fff", fontSize: "13px", padding: "8px 0" }}>
-        <div style={container}>
-          <span>📞 免費諮詢專線：0975-091-591 &nbsp;｜&nbsp; 📍 服務區域：台北・台中</span>
-        </div>
-      </div>
-
       {/* NAVBAR */}
       <header style={{
         position: "sticky", top: 0, zIndex: 100,
         background: "#fff", borderBottom: "1px solid #e1e1e1",
         boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
       }}>
-        <div style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 20px", height: "72px" }}>
+        <div className="flex-wrap gap-y-3" style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 20px" }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
             <div style={{
               width: 38, height: 38, background: "#e65644", borderRadius: 4,
@@ -114,13 +107,13 @@ export default function MudworkHome() {
             </div>
           </a>
 
-          <nav style={{ display: "flex", gap: "24px" }}>
+          <nav className="flex-wrap" style={{ display: "flex", gap: "20px", order: 3 }}>
             {NAV_LINKS.map((link) => (
               <a key={link.label} href={link.href} style={{
                 color: link.label === "首頁" ? "#e65644" : "#14151f",
                 textDecoration: "none",
                 fontWeight: link.label === "首頁" ? 700 : 500,
-                fontSize: "14.5px",
+                fontSize: "14px",
                 borderBottom: link.label === "首頁" ? "2px solid #e65644" : "2px solid transparent",
                 paddingBottom: "2px",
               }}>
@@ -138,9 +131,9 @@ export default function MudworkHome() {
         backgroundImage: "linear-gradient(135deg, rgba(10,10,12,0.88), rgba(10,10,12,0.75)), url('/images/hero-brick.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        color: "#fff", padding: "110px 20px", position: "relative", overflow: "hidden",
+        color: "#fff", padding: "70px 20px", position: "relative", overflow: "hidden",
       }}>
-        <div style={{ ...container, display: "grid", gridTemplateColumns: "1.2fr 0.9fr", gap: 56, alignItems: "center" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.9fr] gap-10 lg:gap-14" style={{ ...container, alignItems: "center" }}>
           <div>
             <p style={{ color: "#e65644", fontWeight: 700, letterSpacing: "3px", fontSize: "12px", textTransform: "uppercase", marginBottom: 20 }}>
               40 年傳承淬鍊的泥作工法
@@ -173,7 +166,7 @@ export default function MudworkHome() {
 
       {/* SERVICE QUICK NAV — real project photos */}
       <section style={{ background: "#fff" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+        <div className="grid grid-cols-2 md:grid-cols-4">
           {[
             { n: "01", title: "牆面施工", img: "/images/service-wall.jpg", href: "/services" },
             { n: "02", title: "浴室裝修", img: "/images/service-bathroom.jpg", href: "/bathroom" },
@@ -198,7 +191,7 @@ export default function MudworkHome() {
 
       {/* ABOUT + STATS */}
       <section id="about" style={{ background: "#fff", padding: "88px 20px" }}>
-        <div style={{ ...container, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16" style={{ ...container, alignItems: "center" }}>
           <div>
             <p style={sectionLabel}>關於黃師傅</p>
             <h2 style={h2}>40 年磨練，每道工序都不將就</h2>
@@ -236,7 +229,7 @@ export default function MudworkHome() {
             <p style={{ ...bodyText, maxWidth: 500, margin: "0 auto 16px" }}>不論工程大小，皆可配合施作，歡迎電話詢問或到府估價。</p>
             <a href="/services" style={{ color: "#e65644", fontWeight: 600, fontSize: "14px" }}>查看完整服務說明 →</a>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28, marginBottom: 36 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7" style={{ marginBottom: 36 }}>
             {SERVICES.map((s) => (
               <div key={s.title} style={{
                 background: "#fff", borderRadius: 10, padding: "36px 28px",
@@ -261,7 +254,7 @@ export default function MudworkHome() {
         background: "linear-gradient(135deg, #14151f, #0e0f17)",
         color: "#fff", padding: "88px 20px",
       }}>
-        <div style={{ ...container, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16" style={{ ...container, alignItems: "center" }}>
           <div>
             <p style={{ ...sectionLabel, color: "#e65644" }}>為什麼選擇我們</p>
             <h2 style={{ ...h2, color: "#fff" }}>誠信施工，工法說話</h2>
@@ -300,7 +293,7 @@ export default function MudworkHome() {
             <p style={{ ...sectionLabel, color: "#e65644" }}>實際案例</p>
             <h2 style={{ ...h2, color: "#fff" }}>近期完工工程</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {PROJECTS.map((p) => (
               <div key={p.title} style={{
                 background: "rgba(255,255,255,0.05)", borderRadius: 10, overflow: "hidden",
@@ -339,7 +332,7 @@ export default function MudworkHome() {
             <p style={sectionLabel}>業主口碑</p>
             <h2 style={h2}>客戶怎麼說</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 28 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">
             {TESTIMONIALS.map((t) => (
               <div key={t.name} style={{
                 background: "#f5f5f3", borderRadius: 10, padding: "32px 28px",
@@ -370,7 +363,7 @@ export default function MudworkHome() {
 
       {/* CONTACT + FAQ */}
       <section id="contact" style={{ background: "#f5f5f3", padding: "88px 20px" }}>
-        <div style={{ ...container, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16" style={{ ...container, alignItems: "start" }}>
           <div>
             <p style={sectionLabel}>免費估價</p>
             <h2 style={h2}>有工程需求？<br />立即聯絡我們！</h2>
@@ -449,7 +442,7 @@ export default function MudworkHome() {
 
       {/* FOOTER */}
       <footer style={{ background: "#14151f", color: "#fff", padding: "60px 20px 0" }}>
-        <div style={{ ...container, display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 40 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10" style={container}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
               <div style={{

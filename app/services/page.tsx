@@ -102,20 +102,13 @@ export default function ServicesPage() {
   return (
     <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#14151f" }}>
 
-      {/* TOP BAR */}
-      <div style={{ background: "#14151f", color: "#fff", fontSize: "13px", padding: "8px 0" }}>
-        <div style={container}>
-          <span>📞 免費諮詢專線：0975-091-591 &nbsp;｜&nbsp; 📍 服務區域：台北・台中</span>
-        </div>
-      </div>
-
       {/* NAVBAR */}
       <header style={{
         position: "sticky", top: 0, zIndex: 100,
         background: "#fff", borderBottom: "1px solid #e1e1e1",
         boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
       }}>
-        <div style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 20px", height: "72px" }}>
+        <div className="flex-wrap gap-y-3" style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 20px" }}>
           <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
             <div style={{
               width: 38, height: 38, background: "#e65644", borderRadius: 4,
@@ -128,7 +121,7 @@ export default function ServicesPage() {
             </div>
           </a>
 
-          <nav style={{ display: "flex", gap: "24px" }}>
+          <nav className="flex-wrap" style={{ display: "flex", gap: "20px", order: 3 }}>
             {NAV_LINKS.map((link) => (
               <a key={link.label} href={link.href} style={{
                 color: link.label === "服務項目" ? "#e65644" : "#14151f",
@@ -180,7 +173,7 @@ export default function ServicesPage() {
             <p style={sectionLabel}>專業服務</p>
             <h2 style={h2}>我們能為您做什麼</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {SERVICES.map((s) => (
               <div key={s.title} style={{
                 background: "#f5f5f3", borderRadius: 10, padding: "40px 32px",
@@ -230,14 +223,14 @@ export default function ServicesPage() {
             <p style={{ ...sectionLabel, color: "#e65644" }}>施工流程</p>
             <h2 style={{ ...h2, color: "#fff" }}>從諮詢到完工，4 個步驟搞定</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {PROCESS.map((p, i) => (
               <div key={p.step} style={{
                 background: "rgba(255,255,255,0.06)", borderRadius: 10, padding: "32px 24px",
                 textAlign: "center", position: "relative",
               }}>
                 {i < PROCESS.length - 1 && (
-                  <div style={{
+                  <div className="hidden lg:block" style={{
                     position: "absolute", right: "-12px", top: "50%",
                     transform: "translateY(-50%)",
                     color: "#e65644", fontSize: "18px", zIndex: 1,
@@ -295,7 +288,7 @@ export default function ServicesPage() {
 
       {/* FOOTER */}
       <footer style={{ background: "#14151f", color: "#fff", padding: "60px 20px 0" }}>
-        <div style={{ ...container, display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 40 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-10" style={container}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
               <div style={{

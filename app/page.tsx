@@ -99,16 +99,10 @@ export default function MudworkHome() {
         {/* NAVBAR — transparent, overlaid on the photo */}
         <header style={{ position: "relative", zIndex: 100 }}>
           <div style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "24px 20px" }}>
-            <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-              <div style={{
-                width: 38, height: 38, background: "#e65644", borderRadius: 4,
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 18, fontWeight: 900, color: "#fff",
-              }}>黃</div>
-              <div>
-                <div style={{ fontWeight: 800, fontSize: "16px", color: "#fff", letterSpacing: "-0.3px", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
-                <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.7)", letterSpacing: "1px" }}>MUD-WORK</div>
-              </div>
+            <a href="/" style={{ textDecoration: "none" }}>
+              <span style={{ fontSize: "24px", fontWeight: 800, letterSpacing: "-0.5px", color: "#fff" }}>
+                mudwork<span style={{ color: "#e65644" }}>.</span>
+              </span>
             </a>
 
             <button
@@ -481,16 +475,10 @@ export default function MudworkHome() {
       <footer style={{ background: "#14151f", color: "#fff", padding: "60px 20px 0" }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10" style={container}>
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-              <div style={{
-                width: 38, height: 38, background: "#e65644", borderRadius: 4,
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 18, fontWeight: 900, color: "#fff",
-              }}>黃</div>
-              <div>
-                <div style={{ fontWeight: 800, fontSize: "16px" }}>泥作師傅黃師傅</div>
-                <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.45)", letterSpacing: "1px" }}>MUD-WORK</div>
-              </div>
+            <div style={{ marginBottom: 20 }}>
+              <span style={{ fontSize: "22px", fontWeight: 800, letterSpacing: "-0.5px", color: "#fff" }}>
+                mudwork<span style={{ color: "#e65644" }}>.</span>
+              </span>
             </div>
             <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", lineHeight: 1.9, marginBottom: 20 }}>
               40 年傳承淬鍊的泥作工法，專業承接牆面施工、浴室裝修、磁磚鋪設、自地自建與統包工程。<br />

@@ -74,12 +74,10 @@ export default function ProjectsPage() {
       {/* NAVBAR */}
       <header style={{ position: "sticky", top: 0, zIndex: 100, background: "#fff", borderBottom: "1px solid #e1e1e1", boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
         <div className="flex-wrap gap-y-3" style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 20px" }}>
-          <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-            <div style={{ width: 38, height: 38, background: "#e65644", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 900, color: "#fff" }}>黃</div>
-            <div>
-              <div style={{ fontWeight: 800, fontSize: "16px", color: "#14151f", letterSpacing: "-0.3px", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
-              <div style={{ fontSize: "10px", color: "#888", letterSpacing: "1px" }}>MUD-WORK</div>
-            </div>
+          <a href="/" style={{ textDecoration: "none" }}>
+            <span style={{ fontSize: "22px", fontWeight: 800, letterSpacing: "-0.5px", color: "#14151f" }}>
+              mudwork<span style={{ color: "#e65644" }}>.</span>
+            </span>
           </a>
           <nav className="flex-wrap" style={{ display: "flex", gap: "20px", order: 3 }}>
             {NAV_LINKS.map((link) => (
@@ -185,12 +183,10 @@ export default function ProjectsPage() {
       <footer style={{ background: "#14151f", color: "#fff", padding: "60px 20px 0" }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-10" style={container}>
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-              <div style={{ width: 38, height: 38, background: "#e65644", borderRadius: 4, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, fontWeight: 900, color: "#fff" }}>黃</div>
-              <div>
-                <div style={{ fontWeight: 800, fontSize: "16px" }}>泥作師傅黃師傅</div>
-                <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.45)", letterSpacing: "1px" }}>MUD-WORK</div>
-              </div>
+            <div style={{ marginBottom: 20 }}>
+              <span style={{ fontSize: "20px", fontWeight: 800, letterSpacing: "-0.5px", color: "#fff" }}>
+                mudwork<span style={{ color: "#e65644" }}>.</span>
+              </span>
             </div>
             <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", lineHeight: 1.9, marginBottom: 20 }}>40 年傳承淬鍊的泥作工法，專業承接各式泥作工程。誠信服務、品質保證。</p>
           </div>

@@ -84,80 +84,140 @@ const FOOTER_SERVICES = ["牆面施工", "浴室裝修", "磁磚鋪設", "自地
 export default function MudworkHome() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#14151f" }}>
 
-      {/* NAVBAR */}
-      <header style={{
-        position: "sticky", top: 0, zIndex: 100,
-        background: "#fff", borderBottom: "1px solid #e1e1e1",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-      }}>
-        <div className="flex-wrap gap-y-3" style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 20px" }}>
-          <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-            <div style={{
-              width: 38, height: 38, background: "#e65644", borderRadius: 4,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 18, fontWeight: 900, color: "#fff",
-            }}>黃</div>
-            <div>
-              <div style={{ fontWeight: 800, fontSize: "16px", color: "#14151f", letterSpacing: "-0.3px", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
-              <div style={{ fontSize: "10px", color: "#888", letterSpacing: "1px" }}>MUD-WORK</div>
-            </div>
-          </a>
-
-          <nav className="flex-wrap" style={{ display: "flex", gap: "20px", order: 3 }}>
-            {NAV_LINKS.map((link) => (
-              <a key={link.label} href={link.href} style={{
-                color: link.label === "首頁" ? "#e65644" : "#14151f",
-                textDecoration: "none",
-                fontWeight: link.label === "首頁" ? 700 : 500,
-                fontSize: "14px",
-                borderBottom: link.label === "首頁" ? "2px solid #e65644" : "2px solid transparent",
-                paddingBottom: "2px",
-              }}>
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          <a href="#contact" style={btnPrimary}>免費估價</a>
-        </div>
-      </header>
-
-      {/* HERO */}
+      {/* HERO — nav overlays directly on the photo, like the real site */}
       <section style={{
-        backgroundImage: "linear-gradient(135deg, rgba(10,10,12,0.88), rgba(10,10,12,0.75)), url('/images/hero-brick.jpg')",
+        backgroundImage: "url('/images/hero-brick.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        color: "#fff", padding: "70px 20px", position: "relative", overflow: "hidden",
+        color: "#fff", position: "relative", overflow: "hidden",
       }}>
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.9fr] gap-10 lg:gap-14" style={{ ...container, alignItems: "center" }}>
-          <div>
-            <p style={{ color: "#e65644", fontWeight: 700, letterSpacing: "3px", fontSize: "12px", textTransform: "uppercase", marginBottom: 20 }}>
-              40 年傳承淬鍊的泥作工法
-            </p>
-            <h1 style={{ fontSize: "clamp(2.2rem,4.5vw,3.2rem)", fontWeight: 800, lineHeight: 1.15, marginBottom: 24, letterSpacing: "-1px" }}>
-              牆面、磁磚、浴室裝修<br />
-              <span style={{ color: "#e65644" }}>師傅親自把關</span>，堅固美觀
-            </h1>
-            <p style={{ fontSize: "16px", lineHeight: 1.9, color: "rgba(255,255,255,0.75)", marginBottom: 40, maxWidth: 500 }}>
-              泥作師傅黃師傅深耕泥作工程領域超過 40 年，承接牆面施工、浴室裝修、磁磚鋪設、
-              自地自建與統包工程，堅持用料實在、精準施工。
-            </p>
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-              <a href="#contact" style={btnPrimary}>立即估價</a>
-              <a href="tel:0975091591" style={{ ...btnOutline, borderColor: "rgba(255,255,255,0.5)", color: "#fff" }}>📞 0975-091-591</a>
-            </div>
+        {/* NAVBAR — transparent, overlaid on the photo */}
+        <header style={{ position: "relative", zIndex: 100 }}>
+          <div style={{ ...container, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "24px 20px" }}>
+            <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
+              <div style={{
+                width: 38, height: 38, background: "#e65644", borderRadius: 4,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontSize: 18, fontWeight: 900, color: "#fff",
+              }}>黃</div>
+              <div>
+                <div style={{ fontWeight: 800, fontSize: "16px", color: "#fff", letterSpacing: "-0.3px", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
+                <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.7)", letterSpacing: "1px" }}>MUD-WORK</div>
+              </div>
+            </a>
+
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="選單"
+              style={{
+                width: 44, height: 44, background: "#e65644", border: "none", borderRadius: 6,
+                display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer",
+              }}
+            >
+              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                <span style={{ width: 20, height: 2, background: "#fff", display: "block" }} />
+                <span style={{ width: 20, height: 2, background: "#fff", display: "block" }} />
+                <span style={{ width: 20, height: 2, background: "#fff", display: "block" }} />
+              </div>
+            </button>
           </div>
 
-          <div style={{ background: "#fff", borderRadius: 12, padding: "32px 28px", boxShadow: "0 20px 60px rgba(0,0,0,0.35)" }}>
+          {menuOpen && (
+            <nav style={{ background: "#fff", boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }}>
+              <div style={{ ...container, padding: "16px 20px", display: "flex", flexDirection: "column", gap: 4 }}>
+                {NAV_LINKS.map((link) => (
+                  <a key={link.label} href={link.href} onClick={() => setMenuOpen(false)} style={{
+                    color: "#14151f", textDecoration: "none", fontWeight: 600, fontSize: "15px",
+                    padding: "10px 4px", borderBottom: "1px solid #eee",
+                  }}>
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </nav>
+          )}
+        </header>
+
+        <div style={{ ...container, padding: "40px 20px 100px", position: "relative" }}>
+          <p style={{ color: "#fff", fontWeight: 700, fontSize: "14px", marginBottom: 16, textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}>
+            全台最好的泥作工程廠商
+          </p>
+          <h1 style={{
+            fontSize: "clamp(2.6rem,6vw,4.2rem)", fontWeight: 800, lineHeight: 1.1, marginBottom: 28,
+            textShadow: "0 4px 20px rgba(0,0,0,0.85)",
+          }}>
+            泥作師傅黃師傅
+          </h1>
+          <p style={{
+            fontSize: "16px", lineHeight: 1.9, marginBottom: 32, maxWidth: 620,
+            textShadow: "0 2px 10px rgba(0,0,0,0.9)",
+          }}>
+            擅長磚砌、石材鋪設以及水泥地板等各項服務。透過提供高品質的施工和專業建議，我們致力於打造出既堅固耐用又美觀的空間。
+            無論是住宅或商業項目，我們都以精湛的技術和用心服務，為您實現理想中的環境。
+          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", marginBottom: 32 }}>
+            <a href="https://lin.ee/DfUKOQF" target="_blank" rel="noopener noreferrer" style={btnPrimary}>立即估價</a>
+            <span style={{ fontWeight: 600, fontSize: "14px", textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}>40年傳承淬鍊的工法</span>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 24 }}>
+            <span style={{ fontSize: "14px", textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}>📍 台北市中正區愛國東路26號</span>
+            <span style={{ fontSize: "14px", textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}>📍 台中市烏日區興祥街191巷29號</span>
+          </div>
+          <div style={{ display: "flex", gap: 14 }}>
+            {[
+              { label: "LINE", href: "https://line.me/R/ti/p/@mtj8192y" },
+              { label: "Facebook", href: "https://www.facebook.com/concreteAREA/" },
+              { label: "TikTok", href: "https://www.tiktok.com/@decorman2020" },
+            ].map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{
+                width: 36, height: 36, borderRadius: "50%", background: "rgba(255,255,255,0.15)",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                color: "#fff", fontSize: "12px", fontWeight: 700, textDecoration: "none",
+                border: "1px solid rgba(255,255,255,0.4)",
+              }}>{s.label[0]}</a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INTRO + CONTACT FORM */}
+      <section id="contact" style={{ background: "#f5f5f3", padding: "88px 20px" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16" style={{ ...container, alignItems: "start" }}>
+          <div>
+            <h2 style={h2}>提供您最好的裝修泥作工程服務</h2>
+            <p style={{ ...bodyText, marginBottom: 20 }}>
+              精湛技藝，用心施工，為您打造最完美的空間。我們是專業且經驗豐富的泥作工程承包商，
+              在泥作工程領域深耕超過 40 年，服務對象涵蓋住宅與商業項目。
+            </p>
+            <a href="tel:0975091591" style={{ ...btnPrimary, display: "inline-block" }}>📞 快速取得報價：0975-091-591</a>
+          </div>
+          <div style={{ background: "#fff", borderRadius: 12, padding: "32px 28px", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}>
             <p style={{ fontSize: "15px", fontWeight: 700, color: "#14151f", marginBottom: 18 }}>留下任何訊息</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-              <input placeholder="姓名 *" style={inputStyle} />
-              <input placeholder="電話 *" style={inputStyle} />
-              <textarea placeholder="有什麼想說的嗎？" rows={3} style={{ ...inputStyle, resize: "vertical" }} />
+              <input
+                placeholder="姓名 *"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                style={inputStyle}
+              />
+              <input
+                placeholder="電話 *"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                style={inputStyle}
+              />
+              <textarea
+                placeholder="有什麼想說的嗎？"
+                rows={3}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                style={{ ...inputStyle, resize: "vertical" }}
+              />
               <button style={{ ...btnPrimary, border: "none", cursor: "pointer" }}>送出詢問</button>
             </div>
           </div>
@@ -361,8 +421,8 @@ export default function MudworkHome() {
         </div>
       </section>
 
-      {/* CONTACT + FAQ */}
-      <section id="contact" style={{ background: "#f5f5f3", padding: "88px 20px" }}>
+      {/* FAQ */}
+      <section id="faq" style={{ background: "#f5f5f3", padding: "88px 20px" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16" style={{ ...container, alignItems: "start" }}>
           <div>
             <p style={sectionLabel}>免費估價</p>
@@ -370,30 +430,7 @@ export default function MudworkHome() {
             <p style={{ ...bodyText, marginBottom: 32 }}>
               留下您的姓名和需求，我們將盡快回覆，並安排師傅到場免費丈量估價。
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              <input
-                placeholder="您的姓名 *"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                style={inputStyle}
-              />
-              <input
-                placeholder="聯絡電話 *"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                style={inputStyle}
-              />
-              <textarea
-                placeholder="工程需求說明（例：浴室磁磚翻新，約 4 坪）"
-                rows={5}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                style={{ ...inputStyle, resize: "vertical" }}
-              />
-              <button style={{ ...btnPrimary, border: "none", cursor: "pointer", alignSelf: "flex-start" }}>
-                送出詢問
-              </button>
-            </div>
+            <a href="#contact" style={{ ...btnPrimary, display: "inline-block" }}>回到上方留言表單</a>
           </div>
 
           <div>

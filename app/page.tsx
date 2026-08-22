@@ -35,10 +35,10 @@ const WHY_US = [
 ];
 
 const PROJECTS = [
-  { title: "彰化永靖牆面施工", location: "彰化縣永靖鄉", tag: "牆面施工" },
-  { title: "浴室裝修案例", location: "台北・台中服務區", tag: "浴室裝修" },
-  { title: "自地自建泥作統包", location: "台北・台中服務區", tag: "自地自建" },
-  { title: "磁磚鋪設工程", location: "台北・台中服務區", tag: "磁磚鋪設" },
+  { title: "牆面磚砌施工", location: "台北・台中服務區", tag: "牆面施工", img: "/images/service-wall.jpg" },
+  { title: "浴室裝修案例", location: "台北・台中服務區", tag: "浴室裝修", img: "/images/service-bathroom.jpg" },
+  { title: "自地自建泥作統包", location: "台北・台中服務區", tag: "自地自建", img: "/images/service-selfbuild.jpg" },
+  { title: "磁磚鋪設工程", location: "台北・台中服務區", tag: "磁磚鋪設", img: "/images/service-tile.png" },
 ];
 
 const TESTIMONIALS = [
@@ -135,37 +135,64 @@ export default function MudworkHome() {
 
       {/* HERO */}
       <section style={{
-        background: "linear-gradient(135deg, #14151f 0%, #0e0f17 60%, #111 100%)",
-        color: "#fff", padding: "120px 20px", position: "relative", overflow: "hidden",
+        backgroundImage: "linear-gradient(135deg, rgba(10,10,12,0.88), rgba(10,10,12,0.75)), url('/images/hero-brick.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        color: "#fff", padding: "110px 20px", position: "relative", overflow: "hidden",
       }}>
-        <div style={{
-          position: "absolute", right: "-80px", top: "-80px",
-          width: 420, height: 420, borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(230,86,68,0.18) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }} />
-        <div style={{
-          position: "absolute", left: "55%", bottom: 0,
-          width: 2, height: "60%",
-          background: "linear-gradient(to bottom, transparent, rgba(230,86,68,0.15), transparent)",
-          pointerEvents: "none",
-        }} />
-        <div style={{ ...container, maxWidth: 720 }}>
-          <p style={{ color: "#e65644", fontWeight: 700, letterSpacing: "3px", fontSize: "12px", textTransform: "uppercase", marginBottom: 20 }}>
-            40 年傳承淬鍊的泥作工法
-          </p>
-          <h1 style={{ fontSize: "clamp(2.4rem,5vw,3.6rem)", fontWeight: 800, lineHeight: 1.1, marginBottom: 24, letterSpacing: "-1px" }}>
-            牆面、磁磚、浴室裝修<br />
-            <span style={{ color: "#e65644" }}>師傅親自把關</span>，堅固美觀
-          </h1>
-          <p style={{ fontSize: "16px", lineHeight: 1.9, color: "rgba(255,255,255,0.72)", marginBottom: 40, maxWidth: 560 }}>
-            泥作師傅黃師傅深耕泥作工程領域超過 40 年，承接牆面施工、浴室裝修、磁磚鋪設、
-            自地自建與統包工程，堅持用料實在、精準施工，打造既堅固耐用又美觀的空間。
-          </p>
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <a href="/services" style={btnPrimary}>查看服務項目</a>
-            <a href="#contact" style={{ ...btnOutline, borderColor: "rgba(255,255,255,0.35)", color: "#fff" }}>立即免費諮詢</a>
+        <div style={{ ...container, display: "grid", gridTemplateColumns: "1.2fr 0.9fr", gap: 56, alignItems: "center" }}>
+          <div>
+            <p style={{ color: "#e65644", fontWeight: 700, letterSpacing: "3px", fontSize: "12px", textTransform: "uppercase", marginBottom: 20 }}>
+              40 年傳承淬鍊的泥作工法
+            </p>
+            <h1 style={{ fontSize: "clamp(2.2rem,4.5vw,3.2rem)", fontWeight: 800, lineHeight: 1.15, marginBottom: 24, letterSpacing: "-1px" }}>
+              牆面、磁磚、浴室裝修<br />
+              <span style={{ color: "#e65644" }}>師傅親自把關</span>，堅固美觀
+            </h1>
+            <p style={{ fontSize: "16px", lineHeight: 1.9, color: "rgba(255,255,255,0.75)", marginBottom: 40, maxWidth: 500 }}>
+              泥作師傅黃師傅深耕泥作工程領域超過 40 年，承接牆面施工、浴室裝修、磁磚鋪設、
+              自地自建與統包工程，堅持用料實在、精準施工。
+            </p>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+              <a href="#contact" style={btnPrimary}>立即估價</a>
+              <a href="tel:0975091591" style={{ ...btnOutline, borderColor: "rgba(255,255,255,0.5)", color: "#fff" }}>📞 0975-091-591</a>
+            </div>
           </div>
+
+          <div style={{ background: "#fff", borderRadius: 12, padding: "32px 28px", boxShadow: "0 20px 60px rgba(0,0,0,0.35)" }}>
+            <p style={{ fontSize: "15px", fontWeight: 700, color: "#14151f", marginBottom: 18 }}>留下任何訊息</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              <input placeholder="姓名 *" style={inputStyle} />
+              <input placeholder="電話 *" style={inputStyle} />
+              <textarea placeholder="有什麼想說的嗎？" rows={3} style={{ ...inputStyle, resize: "vertical" }} />
+              <button style={{ ...btnPrimary, border: "none", cursor: "pointer" }}>送出詢問</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE QUICK NAV — real project photos */}
+      <section style={{ background: "#fff" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+          {[
+            { n: "01", title: "牆面施工", img: "/images/service-wall.jpg", href: "/services" },
+            { n: "02", title: "浴室裝修", img: "/images/service-bathroom.jpg", href: "/bathroom" },
+            { n: "03", title: "磁磚鋪設", img: "/images/service-tile.png", href: "/services" },
+            { n: "04", title: "自地自建", img: "/images/service-selfbuild.jpg", href: "/services" },
+          ].map((s) => (
+            <a key={s.n} href={s.href} style={{
+              position: "relative", height: 300, display: "flex", alignItems: "flex-end",
+              padding: "24px", textDecoration: "none", overflow: "hidden",
+              backgroundImage: `linear-gradient(0deg, rgba(10,10,12,0.85), rgba(10,10,12,0.1)), url('${s.img}')`,
+              backgroundSize: "cover", backgroundPosition: "center",
+            }}>
+              <div>
+                <div style={{ color: "#e65644", fontWeight: 800, fontSize: "13px", marginBottom: 8 }}>{s.n}.</div>
+                <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "18px", marginBottom: 8 }}>{s.title}</h3>
+                <span style={{ color: "rgba(255,255,255,0.8)", fontSize: "12.5px", fontWeight: 600 }}>Learn More →</span>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 
@@ -274,16 +301,15 @@ export default function MudworkHome() {
             <h2 style={{ ...h2, color: "#fff" }}>近期完工工程</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
-            {PROJECTS.map((p, i) => (
+            {PROJECTS.map((p) => (
               <div key={p.title} style={{
                 background: "rgba(255,255,255,0.05)", borderRadius: 10, overflow: "hidden",
                 border: "1px solid rgba(255,255,255,0.1)",
               }}>
                 <div style={{
                   height: 200,
-                  background: i % 2 === 0
-                    ? "linear-gradient(135deg, rgba(230,86,68,0.25), rgba(37,37,37,0.85))"
-                    : "linear-gradient(135deg, rgba(37,37,37,0.85), rgba(230,86,68,0.18))",
+                  backgroundImage: `linear-gradient(0deg, rgba(10,10,12,0.75), rgba(10,10,12,0.05)), url('${p.img}')`,
+                  backgroundSize: "cover", backgroundPosition: "center",
                   display: "flex", alignItems: "flex-end",
                   padding: "16px 20px",
                 }}>

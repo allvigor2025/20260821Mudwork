@@ -15,8 +15,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "冠誠泥作工程行｜專業水泥粉光、磁磚、防水施工",
-  description: "深耕台灣 15 年的泥作工程行，承接住宅翻新、商辦、新建各式泥作工程。水泥粉光、磁磚貼附、防水工程、地坪整平，雙北桃園台中服務。",
+  title: "泥作師傅黃師傅｜MUD-WORK 專業泥作工程 - 牆面施工、浴室裝修、磁磚鋪設",
+  description: "40 年傳承淬鍊的泥作工法，承接牆面施工、浴室裝修、磁磚鋪設、自地自建、統包工程。台北、台中服務，提供免費到府估價。",
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
         {children}
         {/* LINE 浮動聯絡按鈕 */}
         <a
-          href="https://line.me/ti/p/~your-line-id"
+          href="https://line.me/R/ti/p/@mtj8192y"
           target="_blank"
           rel="noopener noreferrer"
           title="LINE 聯絡我們"

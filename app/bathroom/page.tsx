@@ -9,22 +9,32 @@ const NAV_LINKS = [
   { label: "聯絡我們", href: "/#contact" },
 ];
 
-const VALUES = [
-  { icon: "🎯", title: "專業技術", desc: "泥作工程領域深耕超過 40 年，以精湛的技術和優質材料保證每個工程的品質。" },
-  { icon: "🎨", title: "客製化設計", desc: "依照每位客戶的空間與需求規劃施工方式，打造符合期待的空間。" },
-  { icon: "📏", title: "精準施工", desc: "注重細節，每道工序都按標準施作，保證工程的安全性和耐用性。" },
-  { icon: "🤝", title: "誠信服務", desc: "客戶的需求始終是我們首要關注的重點，全程溝通透明。" },
-];
-
-const SERVICE_FEATURES = [
-  { title: "彈性安排", desc: "配合客戶時間表，安排到場丈量與施工時程。" },
-  { title: "實惠套裝", desc: "服務涵蓋磚砌到水泥工程等項目，可依需求彈性組合。" },
-  { title: "特別優惠", desc: "提供價格優惠與特殊服務方案。" },
+const SERVICE_TYPES = [
+  {
+    icon: "🚽",
+    title: "浴廁泥作工程",
+    items: ["全浴室拆除清運", "防水層塗刷", "磚牆打粗底整平", "磁磚黏貼", "衛浴組安裝"],
+  },
+  {
+    icon: "🏠",
+    title: "全新整間浴室",
+    items: ["設計規劃", "地基處理", "隔間建造", "泥作施工", "水電施工", "裝飾裝潢", "清潔驗收"],
+  },
+  {
+    icon: "🔄",
+    title: "舊浴室全室翻新",
+    items: ["舊設施拆除", "重新鋪設地板磁磚", "更換衛浴設備", "粉刷", "照明安裝"],
+  },
+  {
+    icon: "🛁",
+    title: "浴缸拆除重貼磚",
+    items: ["浴缸拆除", "表面清潔", "磁磚鋪設", "填縫"],
+  },
 ];
 
 const FOOTER_SERVICES = ["牆面施工", "浴室裝修", "磁磚鋪設", "自地自建", "統包工程", "防水工程"];
 
-export default function AboutPage() {
+export default function BathroomPage() {
   return (
     <div style={{ fontFamily: "var(--font-dm-sans), var(--font-montserrat), sans-serif", color: "#252525" }}>
 
@@ -46,9 +56,9 @@ export default function AboutPage() {
           <nav style={{ display: "flex", gap: "24px" }}>
             {NAV_LINKS.map((link) => (
               <a key={link.label} href={link.href} style={{
-                color: link.label === "關於我們" ? "#ffb600" : "#252525",
-                textDecoration: "none", fontWeight: link.label === "關於我們" ? 700 : 500, fontSize: "14px",
-                borderBottom: link.label === "關於我們" ? "2px solid #ffb600" : "2px solid transparent", paddingBottom: "2px",
+                color: link.label === "浴室裝修專案" ? "#ffb600" : "#252525",
+                textDecoration: "none", fontWeight: link.label === "浴室裝修專案" ? 700 : 500, fontSize: "14px",
+                borderBottom: link.label === "浴室裝修專案" ? "2px solid #ffb600" : "2px solid transparent", paddingBottom: "2px",
               }}>{link.label}</a>
             ))}
           </nav>
@@ -63,59 +73,39 @@ export default function AboutPage() {
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 20 }}>
             <a href="/" style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", textDecoration: "none" }}>首頁</a>
             <span style={{ color: "rgba(255,255,255,0.3)" }}>›</span>
-            <span style={{ color: "#ffb600", fontSize: "13px", fontWeight: 600 }}>關於我們</span>
+            <span style={{ color: "#ffb600", fontSize: "13px", fontWeight: 600 }}>浴室裝修專案</span>
           </div>
-          <h1 style={{ fontSize: "clamp(2rem,4vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1.1, marginBottom: 16 }}>關於黃師傅</h1>
+          <h1 style={{ fontSize: "clamp(2rem,4vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1.1, marginBottom: 16 }}>浴室裝修專案</h1>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", maxWidth: 540, lineHeight: 1.85 }}>
-            40 年傳承淬鍊的工法，我們致力於打造出既堅固耐用又美觀的空間。
+            我們專注於浴室裝修，以高品質工藝和細心打造出令人驚艷且實用的空間。
           </p>
         </div>
       </section>
 
-      {/* STORY */}
+      {/* SERVICE TYPES */}
       <section style={{ background: "#fff", padding: "88px 20px" }}>
-        <div style={{ ...container, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
-          <div>
-            <p style={sectionLabel}>我們的故事</p>
-            <h2 style={h2}>專業且經驗豐富的<br />泥作工程承包商</h2>
-            <p style={{ ...bodyText, marginBottom: 20 }}>
-              我們是專業泥作工程公司，在泥作工程領域深耕超過 40 年，
-              致力於提供高品質、精準施工的服務。從牆面施工、浴室裝修、磁磚鋪設，
-              到自地自建與統包工程，案例遍布全台。
-            </p>
-            <p style={{ ...bodyText, marginBottom: 20 }}>
-              我們以精湛的技術和優質材料保證每個工程的品質，注重細節，
-              保證工程的安全性和耐用性，讓每位客戶都能安心託付。
-            </p>
-            <p style={{ ...bodyText }}>
-              <strong style={{ color: "#252525" }}>我們的使命，是為客戶打造安全、美觀且耐用的空間；</strong>
-              我們的願景，是成為泥作工程行業的領先者。
-            </p>
-          </div>
-          <div style={{ background: "#f5f5f3", borderRadius: 12, padding: "40px", display: "flex", flexDirection: "column", gap: 24 }}>
-            {SERVICE_FEATURES.map((f) => (
-              <div key={f.title} style={{ borderLeft: "4px solid #ffb600", paddingLeft: 20 }}>
-                <div style={{ fontSize: "16px", fontWeight: 800, color: "#252525" }}>{f.title}</div>
-                <div style={{ fontSize: "14px", color: "#666", marginTop: 6, lineHeight: 1.7 }}>{f.desc}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* VALUES */}
-      <section style={{ background: "#f5f5f3", padding: "88px 20px" }}>
         <div style={container}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <p style={sectionLabel}>核心理念</p>
-            <h2 style={h2}>我們對每位業主的承諾</h2>
+            <p style={sectionLabel}>四大主要服務</p>
+            <h2 style={h2}>依需求選擇最適合的方案</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
-            {VALUES.map((v) => (
-              <div key={v.title} style={{ background: "#fff", borderRadius: 10, padding: "36px 28px", borderTop: "4px solid #ffb600", textAlign: "center" }}>
-                <div style={{ fontSize: "2.4rem", marginBottom: 16 }}>{v.icon}</div>
-                <h3 style={{ fontWeight: 700, fontSize: "17px", marginBottom: 12, color: "#252525" }}>{v.title}</h3>
-                <p style={{ fontSize: "14px", color: "#666", lineHeight: 1.75 }}>{v.desc}</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 28 }}>
+            {SERVICE_TYPES.map((s) => (
+              <div key={s.title} style={{ background: "#f5f5f3", borderRadius: 10, padding: "36px 32px" }}>
+                <div style={{ fontSize: "2.2rem", marginBottom: 16 }}>{s.icon}</div>
+                <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#252525", marginBottom: 16 }}>{s.title}</h3>
+                <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                  {s.items.map((item, i) => (
+                    <li key={item} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: "14px", color: "#555" }}>
+                      <span style={{
+                        width: 22, height: 22, borderRadius: "50%", background: "#ffb600", color: "#252525",
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        fontSize: "11px", fontWeight: 800, flexShrink: 0,
+                      }}>{i + 1}</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -126,10 +116,10 @@ export default function AboutPage() {
       <section style={{ background: "linear-gradient(135deg, #ffb600, #e09600)", padding: "72px 20px", textAlign: "center" }}>
         <div style={container}>
           <h2 style={{ fontSize: "clamp(1.6rem,3vw,2.2rem)", fontWeight: 800, color: "#252525", marginBottom: 16 }}>
-            歡迎與我們合作
+            浴室裝修需求？免費預約估價
           </h2>
           <p style={{ fontSize: "15px", color: "rgba(37,37,37,0.75)", marginBottom: 32, maxWidth: 480, margin: "0 auto 32px" }}>
-            不論工程大小，皆可聯繫。師傅免費到場評估，提供透明報價。
+            提供免費預約估價和線上表單預約服務，師傅親自到場評估。
           </p>
           <a href="/#contact" style={{ background: "#252525", color: "#fff", padding: "14px 36px", borderRadius: 6, fontWeight: 700, fontSize: "15px", textDecoration: "none", display: "inline-block" }}>
             立即免費諮詢
@@ -175,4 +165,3 @@ const container: React.CSSProperties = { maxWidth: 1160, margin: "0 auto", paddi
 const btnPrimary: React.CSSProperties = { background: "#ffb600", color: "#252525", padding: "12px 28px", borderRadius: 6, fontWeight: 700, fontSize: "14px", textDecoration: "none", display: "inline-block" };
 const sectionLabel: React.CSSProperties = { color: "#ffb600", fontWeight: 700, letterSpacing: "1.5px", fontSize: "12px", textTransform: "uppercase" as const, marginBottom: 12 };
 const h2: React.CSSProperties = { fontSize: "clamp(1.6rem,3vw,2.2rem)", fontWeight: 800, color: "#252525", lineHeight: 1.2, letterSpacing: "-0.5px", marginBottom: 16 };
-const bodyText: React.CSSProperties = { fontSize: "15px", color: "#666", lineHeight: 1.85 };

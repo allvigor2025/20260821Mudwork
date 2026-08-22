@@ -4,59 +4,60 @@ import { useEffect, useRef } from "react";
 
 const NAV_LINKS = [
   { label: "首頁", href: "/" },
-  { label: "工程項目", href: "/#projects" },
   { label: "服務項目", href: "/services" },
-  { label: "關於我們", href: "/#about" },
+  { label: "工程實績", href: "/projects" },
+  { label: "浴室裝修專案", href: "/bathroom" },
+  { label: "關於我們", href: "/about" },
   { label: "聯絡我們", href: "/#contact" },
 ];
 
 const SERVICES = [
   {
     icon: "🧱",
-    title: "水泥粉光",
-    desc: "室內外牆面水泥砂漿粉刷、批土整平，表面光滑細緻，耐候耐久。適用於新建工程交屋前底層處理，或老屋翻新整面重做。完工面平整度符合業界標準，可直接作為油漆或壁紙底材。",
-    features: ["內外牆粉刷", "批土整平", "表面拋光", "耐候處理"],
+    title: "牆面施工",
+    desc: "牆面施工專注於精密磚砌、牆面粗底整平、拉皮粉光等工序，以精湛技術打造美觀、堅固的牆面。無論新建牆體或既有牆面修復，皆以同樣標準完成每一道工序。",
+    features: ["紅磚牆舖設", "牆面粗皮、拉皮、粉光", "牆面整修"],
   },
   {
-    icon: "🪵",
-    title: "磁磚工程",
-    desc: "浴室、廚房、客廳、陽台等各式磁磚貼附，精準對縫施工，防滑防潮，選材豐富多元。我們配合業主需求選用適合的黏著劑與填縫材，確保磁磚不空鼓、不滲水。",
-    features: ["室內地壁磚", "戶外石英磚", "馬賽克磚", "大板磚施作"],
+    icon: "🚿",
+    title: "浴室裝修",
+    desc: "專注於浴室裝修項目，致力於為客戶打造舒適、美觀且實用的浴室空間。從全室整修到單項更換，皆可依需求彈性配合施作。",
+    features: ["全室整修", "浴缸拆換", "磁磚鋪設更換", "防水工程", "馬桶、浴櫃更換"],
+  },
+  {
+    icon: "🪟",
+    title: "磁磚鋪設",
+    desc: "專注於精確磁磚鋪設，以專業技術為您打造美觀耐用的磁磚表面，室內外空間、商業與住宅皆可施作。",
+    features: ["室內地面磁磚", "浴室牆面磁磚", "廚房磁磚地板", "戶外露台磁磚", "泳池磁磚", "商業空間磁磚"],
+  },
+  {
+    icon: "🏗",
+    title: "自地自建",
+    desc: "自地自建工程的泥作項目，從基礎打底、牆體砌築到表面粉光，全程專業把關，為新建房屋打下穩固基礎。",
+    features: ["基礎泥作", "牆體砌築", "地坪整平", "全程監工"],
+  },
+  {
+    icon: "📋",
+    title: "統包工程",
+    desc: "整合各項泥作工序的一條龍統包服務，從拆除、打底、砌磚到磁磚鋪設，讓您不需分別聯繫多個廠商，省心省力。",
+    features: ["工程統包", "進度掌控", "單一窗口溝通"],
   },
   {
     icon: "💧",
     title: "防水工程",
-    desc: "屋頂、陽台、衛浴防水施作，採用 PU 彈性防水塗料或抗裂砂漿，有效阻絕滲漏問題。施工前徹底清除舊防水層，確保新防水層附著力，完工後保固明確。",
-    features: ["屋頂防水", "浴室防水", "外牆防潮", "陽台止水"],
-  },
-  {
-    icon: "🔨",
-    title: "拆除清運",
-    desc: "舊磁磚拆除、牆面剔除、混凝土打鑿、廢棄物清運一條龍處理。我們使用專業電動工具，施工快速乾淨，並做好防塵防噪措施，不影響鄰居正常生活。",
-    features: ["磁磚拆除", "牆面剔除", "RC打鑿", "廢棄物清運"],
-  },
-  {
-    icon: "📐",
-    title: "地坪整平打底",
-    desc: "地板水泥打底整平，精確控制坡度與厚度，為後續鋪設磁磚、木地板、環氧樹脂地板奠定穩固基礎。衛浴地板可同步施作洩水坡，確保排水順暢。",
-    features: ["水泥打底", "洩水坡施作", "厚度控制", "表面自平處理"],
-  },
-  {
-    icon: "🏗",
-    title: "外牆修補翻新",
-    desc: "裂縫填補、外牆修復、騎樓地板翻新、磁磚脫落修補，恢復建築外觀，延長使用年限。老舊社區外牆整修、建物外皮翻新，提升房屋價值與居住安全。",
-    features: ["裂縫灌注", "外牆翻新", "騎樓地板", "馬賽克磚修補"],
+    desc: "浴室、陽台等空間防水層塗刷施作，施工前徹底清除舊防水層，確保新防水層附著力，有效阻絕滲漏問題。",
+    features: ["浴室防水", "陽台防水", "防水層塗刷"],
   },
 ];
 
 const PROCESS = [
-  { step: "01", title: "電話或表單詢問", desc: "說明工程地點與需求，初步了解工程範圍。" },
-  { step: "02", title: "師傅到場丈量", desc: "免費到場確認現況，提供詳細書面估價。" },
-  { step: "03", title: "簽約確認施工", desc: "雙方確認報價與工期，簽訂合約後開工。" },
+  { step: "01", title: "電話或 LINE 詢問", desc: "說明工程地點與需求，初步了解工程範圍。" },
+  { step: "02", title: "師傅到場丈量", desc: "免費到場確認現況，提供詳細報價。" },
+  { step: "03", title: "確認施工", desc: "雙方確認報價與工期，安排開工時間。" },
   { step: "04", title: "施工與驗收", desc: "按計畫施工，完工後業主驗收確認。" },
 ];
 
-const PARTNER_TAGS = ["住宅自住翻新", "老屋整修", "新建工程泥作", "商業空間裝修", "社區大樓維修", "室內設計配合"];
+const PARTNER_TAGS = ["住宅泥作翻新", "浴室裝修", "自地自建工程", "商業空間裝修", "磁磚鋪設", "統包工程"];
 
 function TagCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -95,7 +96,7 @@ function TagCarousel() {
   );
 }
 
-const FOOTER_SERVICES = ["水泥粉光工程", "磁磚貼附工程", "防水施工", "地坪整平打底", "拆除清運服務", "外牆修補翻新"];
+const FOOTER_SERVICES = ["牆面施工", "浴室裝修", "磁磚鋪設", "自地自建", "統包工程", "防水工程"];
 
 export default function ServicesPage() {
   return (
@@ -104,7 +105,7 @@ export default function ServicesPage() {
       {/* TOP BAR */}
       <div style={{ background: "#252525", color: "#fff", fontSize: "13px", padding: "8px 0" }}>
         <div style={container}>
-          <span>📞 免費諮詢專線：0912-345-678 &nbsp;｜&nbsp; 📍 服務範圍：雙北、桃園、台中</span>
+          <span>📞 免費諮詢專線：0975-091-591 &nbsp;｜&nbsp; 📍 服務區域：台北・台中</span>
         </div>
       </div>
 
@@ -120,20 +121,20 @@ export default function ServicesPage() {
               width: 38, height: 38, background: "#ffb600", borderRadius: 4,
               display: "flex", alignItems: "center", justifyContent: "center",
               fontSize: 18, fontWeight: 900, color: "#252525",
-            }}>冠</div>
+            }}>黃</div>
             <div>
-              <div style={{ fontWeight: 800, fontSize: "16px", color: "#252525", letterSpacing: "-0.3px", lineHeight: 1.1 }}>冠誠泥作工程</div>
-              <div style={{ fontSize: "10px", color: "#888", letterSpacing: "1px" }}>MASONRY ENGINEERING</div>
+              <div style={{ fontWeight: 800, fontSize: "16px", color: "#252525", letterSpacing: "-0.3px", lineHeight: 1.1 }}>泥作師傅黃師傅</div>
+              <div style={{ fontSize: "10px", color: "#888", letterSpacing: "1px" }}>MUD-WORK</div>
             </div>
           </a>
 
-          <nav style={{ display: "flex", gap: "28px" }}>
+          <nav style={{ display: "flex", gap: "24px" }}>
             {NAV_LINKS.map((link) => (
               <a key={link.label} href={link.href} style={{
                 color: link.label === "服務項目" ? "#ffb600" : "#252525",
                 textDecoration: "none",
                 fontWeight: link.label === "服務項目" ? 700 : 500,
-                fontSize: "14.5px",
+                fontSize: "14px",
                 borderBottom: link.label === "服務項目" ? "2px solid #ffb600" : "2px solid transparent",
                 paddingBottom: "2px",
               }}>
@@ -167,7 +168,7 @@ export default function ServicesPage() {
             服務項目
           </h1>
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.65)", maxWidth: 500, lineHeight: 1.8 }}>
-            從拆除到完工，我們提供泥作工程全流程施作，每道工序都有師傅親自把關。
+            40 年泥作工法傳承，從牆面施工到浴室裝修，每道工序都由師傅親自把關。
           </p>
         </div>
       </section>
@@ -279,7 +280,7 @@ export default function ServicesPage() {
             有施工需求？讓我們來評估
           </h2>
           <p style={{ fontSize: "15px", color: "rgba(37,37,37,0.75)", marginBottom: 32, maxWidth: 480, margin: "0 auto 32px" }}>
-            師傅免費到場丈量估價，施工前提供詳細書面報價，沒有隱藏費用。
+            師傅免費到場丈量估價，施工前提供詳細報價，沒有隱藏費用。
           </p>
           <a href="/#contact" style={{
             background: "#252525", color: "#fff",
@@ -301,17 +302,15 @@ export default function ServicesPage() {
                 width: 38, height: 38, background: "#ffb600", borderRadius: 4,
                 display: "flex", alignItems: "center", justifyContent: "center",
                 fontSize: 18, fontWeight: 900, color: "#252525",
-              }}>冠</div>
+              }}>黃</div>
               <div>
-                <div style={{ fontWeight: 800, fontSize: "16px" }}>冠誠泥作工程行</div>
-                <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.45)", letterSpacing: "1px" }}>MASONRY ENGINEERING</div>
+                <div style={{ fontWeight: 800, fontSize: "16px" }}>泥作師傅黃師傅</div>
+                <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.45)", letterSpacing: "1px" }}>MUD-WORK</div>
               </div>
             </div>
             <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.6)", lineHeight: 1.9, marginBottom: 20 }}>
-              深耕台灣 15 年，專業承接住宅、商辦、新建工程各式泥作工程。<br />
-              誠信報價、品質保證，是我們對每位業主的承諾。
+              40 年傳承淬鍊的泥作工法，專業承接各式泥作工程。誠信服務、品質保證。
             </p>
-            <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.45)" }}>週一至週六 08:00 – 18:00，週日休息</p>
           </div>
           <div>
             <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#ffb600" }}>服務項目</h4>
@@ -326,9 +325,9 @@ export default function ServicesPage() {
           <div>
             <h4 style={{ fontWeight: 700, marginBottom: 20, color: "#ffb600" }}>聯絡資訊</h4>
             <p style={{ fontSize: "13.5px", color: "rgba(255,255,255,0.65)", lineHeight: 2 }}>
-              📞 0912-345-678<br />
-              📧 kuancheng@masonry.tw<br />
-              📍 服務地區：雙北・桃園・台中
+              📞 0975-091-591<br />
+              💬 LINE：@mtj8192y<br />
+              📍 服務區域：台北・台中
             </p>
           </div>
         </div>
@@ -336,7 +335,7 @@ export default function ServicesPage() {
           borderTop: "1px solid rgba(255,255,255,0.1)", marginTop: 48, padding: "20px 0",
           textAlign: "center", fontSize: "13px", color: "rgba(255,255,255,0.4)",
         }}>
-          © 2026 冠誠泥作工程行｜All Rights Reserved
+          © 2026 泥作師傅黃師傅｜MUD-WORK｜All Rights Reserved
         </div>
       </footer>
     </div>

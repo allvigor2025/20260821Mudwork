@@ -304,23 +304,20 @@ export default function MudworkHome() {
       </section>
 
       {/* WHY US */}
-      <section style={{
-        background: "linear-gradient(135deg, #14151f, #0e0f17)",
-        color: "#fff", padding: "88px 20px",
-      }}>
+      <section style={{ background: "#fff", padding: "88px 20px" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16" style={{ ...container, alignItems: "center" }}>
           <div>
-            <p style={{ ...sectionLabel, color: "#e65644" }}>為什麼選擇我們</p>
-            <h2 style={{ ...h2, color: "#fff" }}>誠信施工，工法說話</h2>
-            <p style={{ ...bodyText, color: "rgba(255,255,255,0.70)", marginBottom: 32 }}>
+            <p style={sectionLabel}>為什麼選擇我們</p>
+            <h2 style={h2}>誠信施工，工法說話</h2>
+            <p style={{ ...bodyText, marginBottom: 32 }}>
               我們深知一道牆的品質攸關居住安全與美觀，因此對每個細節都不妥協——
               從備料、打底、粉光到收邊，每一步都由師傅親自把關。
             </p>
             <a href="#contact" style={{ ...btnPrimary, display: "inline-block" }}>立即詢價</a>
           </div>
           <div>
-            <p style={{ ...sectionLabel, color: "#e65644" }}>我們的承諾</p>
-            <p style={{ ...bodyText, color: "rgba(255,255,255,0.65)", marginBottom: 28 }}>
+            <p style={sectionLabel}>我們的承諾</p>
+            <p style={{ ...bodyText, marginBottom: 28 }}>
               打造安全、美觀且耐用的空間，是我們對每位業主不變的使命，
               也是成為泥作工程行業領先者的目標。
             </p>
@@ -328,11 +325,11 @@ export default function MudworkHome() {
               {WHY_US.map((p) => (
                 <div key={p.label} style={{
                   display: "flex", alignItems: "center", gap: 12,
-                  background: "rgba(255,255,255,0.07)", borderRadius: 8,
+                  background: "#f5f5f3", borderRadius: 8,
                   padding: "14px 18px",
                 }}>
                   <span style={{ fontSize: "1.4rem" }}>{p.icon}</span>
-                  <span style={{ fontSize: "14px", fontWeight: 600 }}>{p.label}</span>
+                  <span style={{ fontSize: "14px", fontWeight: 600, color: "#14151f" }}>{p.label}</span>
                 </div>
               ))}
             </div>

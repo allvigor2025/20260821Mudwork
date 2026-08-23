@@ -341,17 +341,17 @@ export default function MudworkHome() {
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" style={{ background: "#14151f", padding: "88px 20px" }}>
+      <section id="projects" style={{ background: "#f5f5f3", padding: "88px 20px" }}>
         <div style={container}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <p style={{ ...sectionLabel, color: "#e65644" }}>實際案例</p>
-            <h2 style={{ ...h2, color: "#fff" }}>近期完工工程</h2>
+            <p style={sectionLabel}>實際案例</p>
+            <h2 style={h2}>近期完工工程</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {PROJECTS.map((p) => (
               <div key={p.title} style={{
-                background: "rgba(255,255,255,0.05)", borderRadius: 10, overflow: "hidden",
-                border: "1px solid rgba(255,255,255,0.1)",
+                background: "#fff", borderRadius: 10, overflow: "hidden",
+                boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
               }}>
                 <div style={{
                   height: 200,
@@ -367,14 +367,14 @@ export default function MudworkHome() {
                   }}>{p.tag}</span>
                 </div>
                 <div style={{ padding: "20px 24px" }}>
-                  <h3 style={{ color: "#fff", fontWeight: 700, fontSize: "16px", marginBottom: 6 }}>{p.title}</h3>
+                  <h3 style={{ color: "#14151f", fontWeight: 700, fontSize: "16px", marginBottom: 6 }}>{p.title}</h3>
                   <p style={{ color: "#e65644", fontSize: "13px", fontWeight: 600 }}>📍 {p.location}</p>
                 </div>
               </div>
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: 40 }}>
-            <a href="/projects" style={{ ...btnOutline, borderColor: "rgba(255,255,255,0.35)", color: "#fff" }}>查看更多案例</a>
+            <a href="/projects" style={btnPrimary}>查看更多案例</a>
           </div>
         </div>
       </section>

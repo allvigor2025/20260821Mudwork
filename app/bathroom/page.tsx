@@ -1,4 +1,10 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "浴室裝修專案｜泥作師傅黃師傅 MUD-WORK",
+  description: "浴室裝修專案：浴廁泥作工程、全新整間浴室、舊浴室全室翻新、浴缸拆除重貼磚。台北、台中服務，免費預約估價。",
+  alternates: { canonical: "/bathroom" },
+};
 
 const NAV_LINKS = [
   { label: "首頁", href: "/" },

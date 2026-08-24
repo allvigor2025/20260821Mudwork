@@ -1,4 +1,10 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "關於我們｜泥作師傅黃師傅 MUD-WORK",
+  description: "泥作師傅黃師傅，深耕泥作工程領域超過 40 年，專業承接牆面施工、浴室裝修、磁磚鋪設、自地自建與統包工程，服務台北、台中地區。",
+  alternates: { canonical: "/about" },
+};
 
 const NAV_LINKS = [
   { label: "首頁", href: "/" },

@@ -15,8 +15,27 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "泥作師傅黃師傅｜MUD-WORK 專業泥作工程 - 牆面施工、浴室裝修、磁磚鋪設",
+  metadataBase: new URL("https://mudwork.online"),
+  title: {
+    default: "泥作師傅黃師傅｜MUD-WORK 專業泥作工程",
+    template: "%s",
+  },
   description: "40 年傳承淬鍊的泥作工法，承接牆面施工、浴室裝修、磁磚鋪設、自地自建、統包工程。台北、台中服務，提供免費到府估價。",
+  openGraph: {
+    type: "website",
+    locale: "zh_TW",
+    siteName: "泥作師傅黃師傅 MUD-WORK",
+    title: "泥作師傅黃師傅｜MUD-WORK 專業泥作工程",
+    description: "40 年傳承淬鍊的泥作工法，承接牆面施工、浴室裝修、磁磚鋪設、自地自建、統包工程。台北、台中服務，提供免費到府估價。",
+    url: "https://mudwork.online",
+    images: [{ url: "/images/hero-brick.jpg", width: 1200, height: 900, alt: "泥作師傅黃師傅施工現場" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "泥作師傅黃師傅｜MUD-WORK 專業泥作工程",
+    description: "40 年傳承淬鍊的泥作工法，台北、台中服務，提供免費到府估價。",
+    images: ["/images/hero-brick.jpg"],
+  },
 };
 
 export default function RootLayout({
